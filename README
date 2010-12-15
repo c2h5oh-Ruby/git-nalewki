@@ -1,28 +1,28 @@
 README
 
 -Dawid Milewski
--£ukasz Opiat
--Adam Kawczyñski
--£ukasz Martyñski
+-Åukasz Opiat
+-Adam KawczyÅ„ski
+-Åukasz MartyÅ„ski
 -Maciej Folga
 
 Wprowadzenie:
 
-Dokument dotyczy projektu realizowanego w ramach zajeæ z Architektury serwisów internetowych. Niniejszy dokument s³u¿y przedstawieniu przeznaczenia tworzonego systemu, jego g³ównych cech i przyjêtych za³o¿eñ.
+Dokument dotyczy projektu realizowanego w ramach zajeÄ‡ z Architektury serwisÃ³w internetowych. Niniejszy dokument sÅ‚uÅ¼y przedstawieniu przeznaczenia tworzonego systemu, jego gÅ‚Ã³wnych cech i przyjÄ™tych zaÅ‚oÅ¼eÅ„.
 
 Cele:
 
-Celem projektu jest stworzenie serwisu "Git-nalewki.pl", umo¿liwiaj¹cego dzielenie siê przepisami na wyszukane i wykwintne trunki zwane nalewkami, oraz komentowanie i ocenianie przepisów innych u¿ytkowników serwisu.
+Celem projektu jest stworzenie serwisu "Git-nalewki.pl", umoÅ¼liwiajÄ…cego dzielenie siÄ™ przepisami na wyszukane i wykwintne trunki zwane nalewkami, oraz komentowanie i ocenianie przepisÃ³w innych uÅ¼ytkownikÃ³w serwisu.
 
-U¿ytkownicy
+UÅ¼ytkownicy
 
-Nasz¹ aplikacja przeznaczona jest dla mi³oœników oraz degustatorów, którzy lubi¹ mieæ w swoim barku coœ czego nie mo¿na dostaæ w sklepie i czym bêd¹ mogli poczêstowaæ goœci w czasie spotkañ rodzinnych i towarzyskich.
+NaszÄ… aplikacja przeznaczona jest dla miÅ‚oÅ›nikÃ³w oraz degustatorÃ³w, ktÃ³rzy lubiÄ… mieÄ‡ w swoim barku coÅ› czego nie moÅ¼na dostaÄ‡ w sklepie i czym bÄ™dÄ… mogli poczÄ™stowaÄ‡ goÅ›ci w czasie spotkaÅ„ rodzinnych i towarzyskich.
 
 Wizja projektu:
 
--Logowanie siê przez konta w serwisach internetowych (m.in. Google, Yahoo, facebook)
--Dodawanie w³asnych sprawdzonych przepisów
--Mo¿liwoœæ komentowania i oceniania przpisów innych u¿ytkowników serwisu
--Dodawanie zdjêæ gotowych nalewek, oraz propozycji podania
--Ranking najlepiej ocenionych przepisów
--Wyszukiwanie przepisów po kategoriach, sk³adnikach, cenach przygotowania, trudnoœci przygotowania
+-Logowanie siÄ™ przez konta w serwisach internetowych (m.in. Google, Yahoo, facebook)
+-Dodawanie wÅ‚asnych sprawdzonych przepisÃ³w
+-MoÅ¼liwoÅ›Ä‡ komentowania i oceniania przpisÃ³w innych uÅ¼ytkownikÃ³w serwisu
+-Dodawanie zdjÄ™Ä‡ gotowych nalewek, oraz propozycji podania
+-Ranking najlepiej ocenionych przepisÃ³w
+-Wyszukiwanie przepisÃ³w po kategoriach, skÅ‚adnikach, cenach przygotowania, trudnoÅ›ci przygotowania
