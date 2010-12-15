@@ -1,0 +1,28 @@
+README
+
+-Dawid Milewski
+-£ukasz Opiat
+-Adam Kawczyñski
+-£ukasz Martyñski
+-Maciej Folga
+
+Wprowadzenie:
+
+Dokument dotyczy projektu realizowanego w ramach zajeæ z Architektury serwisów internetowych. Niniejszy dokument s³u¿y przedstawieniu przeznaczenia tworzonego systemu, jego g³ównych cech i przyjêtych za³o¿eñ.
+
+Cele:
+
+Celem projektu jest stworzenie serwisu "Git-nalewki.pl", umo¿liwiaj¹cego dzielenie siê przepisami na wyszukane i wykwintne trunki zwane nalewkami, oraz komentowanie i ocenianie przepisów innych u¿ytkowników serwisu.
+
+U¿ytkownicy
+
+Nasz¹ aplikacja przeznaczona jest dla mi³oœników oraz degustatorów, którzy lubi¹ mieæ w swoim barku coœ czego nie mo¿na dostaæ w sklepie i czym bêd¹ mogli poczêstowaæ goœci w czasie spotkañ rodzinnych i towarzyskich.
+
+Wizja projektu:
+
+-Logowanie siê przez konta w serwisach internetowych (m.in. Google, Yahoo, facebook)
+-Dodawanie w³asnych sprawdzonych przepisów
+-Mo¿liwoœæ komentowania i oceniania przpisów innych u¿ytkowników serwisu
+-Dodawanie zdjêæ gotowych nalewek, oraz propozycji podania
+-Ranking najlepiej ocenionych przepisów
+-Wyszukiwanie przepisów po kategoriach, sk³adnikach, cenach przygotowania, trudnoœci przygotowania
