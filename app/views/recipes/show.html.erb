@@ -4,7 +4,9 @@
   <b>Nazwa:</b>
   <%= @recipe.nazwa %>
 </p>
-
+<p>
+<%= image_tag @recipe.photo.url(:small) %>
+</p>
 <p>
   <b>Przepis:</b>
   <%= @recipe.przepis %>
