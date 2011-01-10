@@ -1,5 +1,9 @@
 Nalewki::Application.routes.draw do
-  resources :recipes
+  resources :recipes do
+  collection do
+    get :tags
+  end
+end
 root :to => "recipes#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

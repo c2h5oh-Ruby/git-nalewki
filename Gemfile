@@ -7,7 +7,7 @@ gem 'rails', '3.0.1'
 gem 'paperclip'
 gem 'jquery-rails'
 gem 'sqlite3-ruby', :require => 'sqlite3'
-
+gem 'acts-as-taggable-on'
 # Use unicorn as the web server
 # gem 'unicorn'
 

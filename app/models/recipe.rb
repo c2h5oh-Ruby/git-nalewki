@@ -1,4 +1,6 @@
 class Recipe < ActiveRecord::Base
+  acts_as_taggable_on :tags
+  ActsAsTaggableOn::TagList.delimiter = " "
   has_attached_file :photo, :styles => { :small => "150x150>" },
                   :url  => "/zdjecia/:id/:style/:basename.:extension",
                   :path => ":rails_root/public/zdjecia/:id/:style/:basename.:extension"

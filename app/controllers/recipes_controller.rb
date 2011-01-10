@@ -1,15 +1,21 @@
 class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.xml
+before_filter :only => [:index, :tags] do
+  @tags = Recipe.tag_counts  # for tag clouds
+end
   def index
     @recipes = Recipe.search(params[:search]).order("created_at desc")
-
+  @tags = Recipe.tag_counts
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @recipes }
     end
   end
-
+def tags
+  @recipes = Recipe.tagged_with(params[:name])
+  render 'index'
+end
   # GET /recipes/1
   # GET /recipes/1.xml
   def show

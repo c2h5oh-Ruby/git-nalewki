@@ -864,3 +864,1110 @@ ActionController::RoutingError (No route matches "/javascripts/rails.js"):
   
 
 Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateRecipes (20110105121304)
+Migrating to AddAttachmentPhotoToRecipe (20110106132015)
+Migrating to ActsAsTaggableOnMigration (20110107150518)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (2.0ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [1m[35mSQL (1.0ms)[0m  CREATE TABLE "taggings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "taggable_id" integer, "taggable_type" varchar(255), "tagger_id" integer, "tagger_type" varchar(255), "context" varchar(255), "created_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("taggings")[0m
+  [1m[35mSQL (0.0ms)[0m  CREATE INDEX "index_taggings_on_tag_id" ON "taggings" ("tag_id")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("taggings")[0m
+  [1m[35mSQL (1.0ms)[0m  PRAGMA index_info('index_taggings_on_tag_id')
+  [1m[36mSQL (0.0ms)[0m  [1mCREATE INDEX "index_taggings_on_taggable_id_and_taggable_type_and_context" ON "taggings" ("taggable_id", "taggable_type", "context")[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110107150518')
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  PRAGMA index_list("recipes")
+  [1m[36mSQL (1.0ms)[0m  [1mPRAGMA index_list("taggings")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type_and_context')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_taggings_on_tag_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("tags")
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-07 16:12:25 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (2.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 4) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 3) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 2) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered recipes/index.html.erb within layouts/application (288.0ms)
+Completed 200 OK in 1235ms (Views: 395.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-07 16:12:31 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (2.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 4) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 3) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 2) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+Rendered recipes/index.html.erb within layouts/application (78.0ms)
+Completed 200 OK in 292ms (Views: 180.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:12:32 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:12:32 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (31.0ms)
+
+
+Started GET "/recipes/4" for 127.0.0.1 at 2011-01-07 16:12:38 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 4) LIMIT 1[0m
+Rendered recipes/show.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 251ms (Views: 128.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:12:38 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:12:38 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:12:40 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (2.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 4) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 3) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 2) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered recipes/index.html.erb within layouts/application (79.0ms)
+Completed 200 OK in 292ms (Views: 182.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:12:41 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:12:41 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:13:11 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (2.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 4) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 3) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 2) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+Rendered recipes/index.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 294ms (Views: 212.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:13:11 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:13:11 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/recipes/4" for 127.0.0.1 at 2011-01-07 16:13:13 +0100
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Je+2hoCc54HByx8A2Tnzdwf+Mj2HKyMGFirR1zSsACM=", "id"=>"4"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 4) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (1.0ms)[0m  SELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 4 AND "taggings".taggable_type = 'Recipe')
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 4 AND "taggings".taggable_type = 'Recipe' AND (taggings.tagger_id IS NULL AND taggings.context = 'tags'))[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/4/original/5001.jpg
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/4/small/5001.jpg
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "recipes" WHERE ("recipes"."id" = 4)
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 235ms
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:13:13 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 3) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 2) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered recipes/index.html.erb within layouts/application (99.0ms)
+Completed 200 OK in 279ms (Views: 200.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:13:14 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:13:14 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/recipes/3" for 127.0.0.1 at 2011-01-07 16:13:14 +0100
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Je+2hoCc54HByx8A2Tnzdwf+Mj2HKyMGFirR1zSsACM=", "id"=>"3"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 3) LIMIT 1
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 3 AND "taggings".taggable_type = 'Recipe')[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (1.0ms)[0m  SELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 3 AND "taggings".taggable_type = 'Recipe' AND (taggings.tagger_id IS NULL AND taggings.context = 'tags'))
+[paperclip] Deleting attachments.
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/3/original/32083_114884801888313_100001003824196_86489_1054772_n.jpg
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/3/small/32083_114884801888313_100001003824196_86489_1054772_n.jpg
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "recipes" WHERE ("recipes"."id" = 3)[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 194ms
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:13:15 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (3.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 2) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered recipes/index.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 277ms (Views: 167.0ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:13:15 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:13:15 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/recipes/2" for 127.0.0.1 at 2011-01-07 16:13:16 +0100
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Je+2hoCc54HByx8A2Tnzdwf+Mj2HKyMGFirR1zSsACM=", "id"=>"2"}
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 2) LIMIT 1
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 2 AND "taggings".taggable_type = 'Recipe')[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (1.0ms)[0m  SELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 2 AND "taggings".taggable_type = 'Recipe' AND (taggings.tagger_id IS NULL AND taggings.context = 'tags'))
+[paperclip] Deleting attachments.
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/2/original/5001.jpg
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/2/small/5001.jpg
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "recipes" WHERE ("recipes"."id" = 2)[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 199ms
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:13:16 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+Rendered recipes/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 217ms (Views: 112.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:13:17 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:13:17 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-01-07 16:13:18 +0100
+  Processing by RecipesController#new as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_recipes__form_html_erb___41229047_32114880__38511922 at C:/Users/Szolek/Documents/NetBeansProjects/nalewki/app/views/recipes/_form.html.erb:2)
+Rendered recipes/_form.html.erb (214.0ms)
+Rendered recipes/new.html.erb within layouts/application (248.0ms)
+Completed 200 OK in 458ms (Views: 354.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:13:18 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:13:18 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2011-01-07 16:13:28 +0100
+  Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Je+2hoCc54HByx8A2Tnzdwf+Mj2HKyMGFirR1zSsACM=", "recipe"=>{"nazwa"=>"", "przepis"=>"", "skladniki"=>"", "cena"=>"", "trudnosc"=>"", "autor"=>"", "tag_list"=>"1 3 2 5", "photo"=>#<File:C:/Users/Szolek/AppData/Local/Temp/RackMultipart20110107-5784-1c3sxr8>}, "commit"=>"Create Recipe"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[paperclip] identify -format %wx%h "C:/Users/Szolek/AppData/Local/Temp/stream20110107-5784-1wkcdob.jpg[0]" 2>NUL
+[paperclip] convert "C:/Users/Szolek/AppData/Local/Temp/stream20110107-5784-1wkcdob.jpg[0]" -resize "150x150>" "C:/Users/Szolek/AppData/Local/Temp/stream20110107-5784-1wkcdob20110107-5784-1dvimar" 2>NUL
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "recipes" ("autor", "cena", "created_at", "nazwa", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "przepis", "skladniki", "trudnosc", "updated_at") VALUES ('', '', '2011-01-07 15:13:30.652000', '', 'image/jpeg', '5001.jpg', 65271, '2011-01-07 15:13:29.188000', '', '', NULL, '2011-01-07 15:13:30.652000')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" WHERE (name LIKE '1' OR name LIKE '3' OR name LIKE '2' OR name LIKE '5')
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = '1') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("name") VALUES ('1')
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = '3') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("name") VALUES ('3')
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = '2') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("name") VALUES ('2')
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = '5') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("name") VALUES ('5')
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 5) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.0ms)[0m  SELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 5 AND "taggings".taggable_type = 'Recipe') AND ("taggings"."tagger_type" IS NULL) AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."context" = 'tags') AND ("taggings"."tag_id" IN (NULL))
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 1) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 5) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-07 15:13:30.934000', 1, 5, 'Recipe', NULL, NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 2) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 5) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-07 15:13:30.947000', 2, 5, 'Recipe', NULL, NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 3) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 5) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-07 15:13:30.951000', 3, 5, 'Recipe', NULL, NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 4) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 5) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-07 15:13:30.954000', 4, 5, 'Recipe', NULL, NULL)
+[paperclip] Saving attachments.
+[paperclip] saving C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/5/original/5001.jpg
+[paperclip] saving C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/5/small/5001.jpg
+Redirected to http://localhost:3000/recipes/5
+Completed 302 Found in 1887ms
+
+
+Started GET "/recipes/5" for 127.0.0.1 at 2011-01-07 16:13:31 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 5) LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 185ms (Views: 90.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:13:31 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:13:31 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:13:32 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 5) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+Rendered recipes/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 174ms (Views: 120.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:13:33 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:13:33 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:13:50 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 5) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered recipes/index.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 226ms (Views: 172.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:13:51 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:13:51 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:24:36 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 5) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (205.0ms)
+Completed   in 417ms
+
+ActionView::Template::Error (undefined method `tags_contacts_path' for #<#<Class:0x4ae27e0>:0x4ae1538>):
+    37: <% end %>
+    38: <br />
+    39: <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    40:   <%= link_to tag.name, tags_contacts_path(:name=>tag.name), :class => css_class %>
+    41:   <%= debug(tag) %>
+    42: <% end %>
+    43: <%= link_to 'New Recipe', new_recipe_path %>
+  app/views/recipes/index.html.erb:40:in `block in _app_views_recipes_index_html_erb__499057666_39257172__873978975'
+  app/views/recipes/index.html.erb:39:in `_app_views_recipes_index_html_erb__499057666_39257172__873978975'
+  app/controllers/recipes_controller.rb:10:in `index'
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (57.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:25:14 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 5) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 171ms (Views: 118.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:25:15 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:25:15 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:25:19 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 5) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 169ms (Views: 117.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:25:19 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:25:19 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/recipes/tags?name=1" for 127.0.0.1 at 2011-01-07 16:25:22 +0100
+  Processing by RecipesController#tags as HTML
+  Parameters: {"name"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" WHERE (name LIKE '1')
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" JOIN taggings recipes_taggings_1_554 ON recipes_taggings_1_554.taggable_id = recipes.id AND recipes_taggings_1_554.taggable_type = 'Recipe' AND recipes_taggings_1_554.tag_id = 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 5) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 176ms (Views: 121.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:25:22 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:25:22 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/recipes/tags?name=3" for 127.0.0.1 at 2011-01-07 16:25:24 +0100
+  Processing by RecipesController#tags as HTML
+  Parameters: {"name"=>"3"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE '3')[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" JOIN taggings recipes_taggings_3_404 ON recipes_taggings_3_404.taggable_id = recipes.id AND recipes_taggings_3_404.taggable_type = 'Recipe' AND recipes_taggings_3_404.tag_id = 2
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 5) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 174ms (Views: 119.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:25:24 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:25:24 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/recipes/5" for 127.0.0.1 at 2011-01-07 16:25:31 +0100
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Je+2hoCc54HByx8A2Tnzdwf+Mj2HKyMGFirR1zSsACM=", "id"=>"5"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 5) LIMIT 1
+  [1m[36mActsAsTaggableOn::Tagging Load (2.0ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 5 AND "taggings".taggable_type = 'Recipe')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."id" IN (1,2,3,4))
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "taggings" WHERE ("taggings"."id" = 1)[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "taggings" WHERE ("taggings"."id" = 2)
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "taggings" WHERE ("taggings"."id" = 3)[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "taggings" WHERE ("taggings"."id" = 4)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 5 AND "taggings".taggable_type = 'Recipe' AND (taggings.tagger_id IS NULL AND taggings.context = 'tags'))[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/5/original/5001.jpg
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/5/small/5001.jpg
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "recipes" WHERE ("recipes"."id" = 5)
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 178ms
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:25:31 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 141ms (Views: 82.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:25:32 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:25:32 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:25:44 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 195ms (Views: 117.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:25:44 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:25:45 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-01-07 16:25:46 +0100
+  Processing by RecipesController#new as HTML
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_recipes__form_html_erb___41229047_35465700__38511922 at C:/Users/Szolek/Documents/NetBeansProjects/nalewki/app/views/recipes/_form.html.erb:2)
+Rendered recipes/_form.html.erb (72.0ms)
+Rendered recipes/new.html.erb within layouts/application (107.0ms)
+Completed 200 OK in 286ms (Views: 211.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:25:46 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:25:46 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2011-01-07 16:25:54 +0100
+  Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Je+2hoCc54HByx8A2Tnzdwf+Mj2HKyMGFirR1zSsACM=", "recipe"=>{"nazwa"=>"", "przepis"=>"", "skladniki"=>"", "cena"=>"", "trudnosc"=>"", "autor"=>"", "tag_list"=>"4 32 1 4", "photo"=>#<File:C:/Users/Szolek/AppData/Local/Temp/RackMultipart20110107-5784-18mnww5>}, "commit"=>"Create Recipe"}
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+[paperclip] identify -format %wx%h "C:/Users/Szolek/AppData/Local/Temp/stream20110107-5784-a6vmz6.jpg[0]" 2>NUL
+[paperclip] convert "C:/Users/Szolek/AppData/Local/Temp/stream20110107-5784-a6vmz6.jpg[0]" -resize "150x150>" "C:/Users/Szolek/AppData/Local/Temp/stream20110107-5784-a6vmz620110107-5784-1ld0f8j" 2>NUL
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "recipes" ("autor", "cena", "created_at", "nazwa", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "przepis", "skladniki", "trudnosc", "updated_at") VALUES ('', '', '2011-01-07 15:25:55.094000', '', 'image/jpeg', '1285794354_by_smerf91_500.jpg', 63848, '2011-01-07 15:25:54.631000', '', '', NULL, '2011-01-07 15:25:55.094000')
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE '4' OR name LIKE '32' OR name LIKE '1')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = '4') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name") VALUES ('4')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = '32') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name") VALUES ('32')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (1.0ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Recipe') AND ("taggings"."tagger_type" IS NULL) AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."context" = 'tags') AND ("taggings"."tag_id" IN (NULL))[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.0ms)[0m  SELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 1) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 6) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-07 15:25:55.435000', 1, 6, 'Recipe', NULL, NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (1.0ms)[0m  SELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 5) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 6) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-07 15:25:55.512000', 5, 6, 'Recipe', NULL, NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.0ms)[0m  SELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 6) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 6) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-07 15:25:55.516000', 6, 6, 'Recipe', NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/6/original/1285794354_by_smerf91_500.jpg
+[paperclip] saving C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/6/small/1285794354_by_smerf91_500.jpg
+Redirected to http://localhost:3000/recipes/6
+Completed 302 Found in 1030ms
+
+
+Started GET "/recipes/6" for 127.0.0.1 at 2011-01-07 16:25:55 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 6) LIMIT 1[0m
+Rendered recipes/show.html.erb within layouts/application (91.0ms)
+Completed 200 OK in 286ms (Views: 194.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:25:56 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:25:56 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-07 16:25:57 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (133.0ms)
+Completed 200 OK in 316ms (Views: 237.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:25:58 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:25:58 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/recipes/tags?name=32" for 127.0.0.1 at 2011-01-07 16:25:59 +0100
+  Processing by RecipesController#tags as HTML
+  Parameters: {"name"=>"32"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE '32')[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" JOIN taggings recipes_taggings_32_203 ON recipes_taggings_32_203.taggable_id = recipes.id AND recipes_taggings_32_203.taggable_type = 'Recipe' AND recipes_taggings_32_203.tag_id = 6
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (134.0ms)
+Completed 200 OK in 316ms (Views: 235.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-01-07 16:26:00 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-07 16:26:00 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-08 14:16:45 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (249.0ms)
+Completed 200 OK in 1179ms (Views: 346.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-08 14:16:51 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2011-01-08 14:16:58 +0100
+  Processing by RecipesController#new as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_recipes__form_html_erb___116488041_30352572__13545202 at C:/Users/Szolek/Documents/NetBeansProjects/nalewki/app/views/recipes/_form.html.erb:2)
+Rendered recipes/_form.html.erb (161.0ms)
+Rendered recipes/new.html.erb within layouts/application (220.0ms)
+Completed 200 OK in 398ms (Views: 325.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-08 14:16:58 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2011-01-08 14:17:23 +0100
+  Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"efyJ0UjD2oQSwtGM5+ya9UFVnV7DcwDBjMuhmi+8XBY=", "recipe"=>{"nazwa"=>"nalewka z gówna", "przepis"=>"kał", "skladniki"=>"123", "cena"=>"1", "trudnosc"=>"2", "autor"=>"zenek burczymucha", "tag_list"=>"er t w", "photo"=>#<File:C:/Users/Szolek/AppData/Local/Temp/RackMultipart20110108-2384-5g9rt>}, "commit"=>"Create Recipe"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[paperclip] identify -format %wx%h "C:/Users/Szolek/AppData/Local/Temp/stream20110108-2384-rbbf3n.jpg[0]" 2>NUL
+[paperclip] convert "C:/Users/Szolek/AppData/Local/Temp/stream20110108-2384-rbbf3n.jpg[0]" -resize "150x150>" "C:/Users/Szolek/AppData/Local/Temp/stream20110108-2384-rbbf3n20110108-2384-1uizmhj" 2>NUL
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "recipes" ("autor", "cena", "created_at", "nazwa", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "przepis", "skladniki", "trudnosc", "updated_at") VALUES ('zenek burczymucha', '1', '2011-01-08 13:17:25.565000', 'nalewka z gówna', 'image/jpeg', '1285794354_by_smerf91_500.jpg', 63848, '2011-01-08 13:17:23.671000', 'kał', '123', 2, '2011-01-08 13:17:25.565000')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" WHERE (name LIKE 'er' OR name LIKE 't' OR name LIKE 'w')
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = 'er') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("name") VALUES ('er')
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = 't') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("name") VALUES ('t')
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = 'w') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("name") VALUES ('w')
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 7) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.0ms)[0m  SELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 7 AND "taggings".taggable_type = 'Recipe') AND ("taggings"."tagger_type" IS NULL) AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."context" = 'tags') AND ("taggings"."tag_id" IN (NULL))
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 7) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 7) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-08 13:17:25.839000', 7, 7, 'Recipe', NULL, NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (1.0ms)[0m  [1mSELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 8) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 7) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-08 13:17:25.849000', 8, 7, 'Recipe', NULL, NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 9) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 7) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-08 13:17:25.852000', 9, 7, 'Recipe', NULL, NULL)
+[paperclip] Saving attachments.
+[paperclip] saving C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/7/original/1285794354_by_smerf91_500.jpg
+[paperclip] saving C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/7/small/1285794354_by_smerf91_500.jpg
+Redirected to http://localhost:3000/recipes/7
+Completed 302 Found in 2304ms
+
+
+Started GET "/recipes/7" for 127.0.0.1 at 2011-01-08 14:17:25 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 7) LIMIT 1
+Rendered recipes/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 152ms (Views: 89.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-08 14:17:26 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-08 14:17:28 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 7) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 172ms (Views: 120.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-08 14:17:28 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/recipes/tags?name=t" for 127.0.0.1 at 2011-01-08 14:17:32 +0100
+  Processing by RecipesController#tags as HTML
+  Parameters: {"name"=>"t"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 't')[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" JOIN taggings recipes_taggings_t_606 ON recipes_taggings_t_606.taggable_id = recipes.id AND recipes_taggings_t_606.taggable_type = 'Recipe' AND recipes_taggings_t_606.tag_id = 8
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 7) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 166ms (Views: 112.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-08 14:17:32 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/recipes/tags?name=1" for 127.0.0.1 at 2011-01-08 14:17:35 +0100
+  Processing by RecipesController#tags as HTML
+  Parameters: {"name"=>"1"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" WHERE (name LIKE '1')
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" JOIN taggings recipes_taggings_1_46 ON recipes_taggings_1_46.taggable_id = recipes.id AND recipes_taggings_1_46.taggable_type = 'Recipe' AND recipes_taggings_1_46.tag_id = 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 194ms (Views: 115.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-08 14:17:35 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/recipes/tags?name=1" for 127.0.0.1 at 2011-01-08 14:17:43 +0100
+  Processing by RecipesController#tags as HTML
+  Parameters: {"name"=>"1"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE '1')[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" JOIN taggings recipes_taggings_1_535 ON recipes_taggings_1_535.taggable_id = recipes.id AND recipes_taggings_1_535.taggable_type = 'Recipe' AND recipes_taggings_1_535.tag_id = 1
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 299ms (Views: 165.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-08 14:17:44 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at 2011-01-08 14:17:45 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 7) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 270ms (Views: 171.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-08 14:17:45 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started POST "/recipes/7" for 127.0.0.1 at 2011-01-08 14:17:47 +0100
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"efyJ0UjD2oQSwtGM5+ya9UFVnV7DcwDBjMuhmi+8XBY=", "id"=>"7"}
+  [1m[35mSQL (2.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 7) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (3.0ms)[0m  SELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 7 AND "taggings".taggable_type = 'Recipe')
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."id" IN (7,8,9))[0m
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "taggings" WHERE ("taggings"."id" = 8)
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "taggings" WHERE ("taggings"."id" = 9)[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "taggings" WHERE ("taggings"."id" = 10)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.0ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 7 AND "taggings".taggable_type = 'Recipe' AND (taggings.tagger_id IS NULL AND taggings.context = 'tags'))[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/7/original/1285794354_by_smerf91_500.jpg
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/7/small/1285794354_by_smerf91_500.jpg
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "recipes" WHERE ("recipes"."id" = 7)
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 232ms
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-08 14:17:47 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 6) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (70.0ms)
+Completed 200 OK in 245ms (Views: 170.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-08 14:17:48 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/recipes/6" for 127.0.0.1 at 2011-01-08 14:17:49 +0100
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"efyJ0UjD2oQSwtGM5+ya9UFVnV7DcwDBjMuhmi+8XBY=", "id"=>"6"}
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 6) LIMIT 1
+  [1m[36mActsAsTaggableOn::Tagging Load (2.0ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Recipe')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."id" IN (1,5,6))
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "taggings" WHERE ("taggings"."id" = 5)[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "taggings" WHERE ("taggings"."id" = 6)
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "taggings" WHERE ("taggings"."id" = 7)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.0ms)[0m  SELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 6 AND "taggings".taggable_type = 'Recipe' AND (taggings.tagger_id IS NULL AND taggings.context = 'tags'))
+[paperclip] Deleting attachments.
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/6/original/1285794354_by_smerf91_500.jpg
+[paperclip] deleting C:/Users/Szolek/Documents/NetBeansProjects/nalewki/public/zdjecia/6/small/1285794354_by_smerf91_500.jpg
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "recipes" WHERE ("recipes"."id" = 6)[0m
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 201ms
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-08 14:17:49 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 189ms (Views: 111.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/javascripts/rails.js" for 127.0.0.1 at 2011-01-08 14:17:49 +0100
+
+ActionController::RoutingError (No route matches "/javascripts/rails.js"):
+  
+
+Rendered D:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
