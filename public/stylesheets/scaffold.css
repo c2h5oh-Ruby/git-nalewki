@@ -29,7 +29,7 @@ body{padding:0px; margin:0px; background:url(../images/main-bg.jpg) 0 0 repeat-x
 /*----/BODY TOP PANEL----*/
 
 /*----BODY MIDDLE PANEL----*/
-#bodymiddleMainPan{width:100%;  background:url(images/bodybg.gif) 0 0 repeat-x #F1FDDD; color:#5E8402; margin:80px 0 0 0; clear:both; padding:0 0 0 34px;}
+#bodymiddleMainPan{width:100%;  background:url(images/bodybg.gif) 0 0 repeat-x #F1FDDD; color:#5E8402; margin:80px 0 0 0; clear:both; padding:0 0 20px 37px;}
 
 #bodymiddleMainPan h2{height:55px; width:280px; background:url(images/icon2.gif) 0 1px no-repeat; text-transform:uppercase; font-size:20px; line-height:57px;  margin:0 auto;}
 

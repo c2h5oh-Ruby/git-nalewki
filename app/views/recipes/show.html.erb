@@ -1,9 +1,16 @@
+<div id="container">
+<div id="topPan">
+	<img src="../images/logo.gif" title="Liqidity Graph" alt="Liqidity Graph" width="260" height="56" border="0" class="logo" />
+	<ul>
+		<li><%= link_to "Katalog", recipes_path %></li>
+		<li><%= link_to 'Dodaj', new_recipe_path %></li>
+		<li><%= link_to_rpx "Zaloguj sie", user_session_url %> </li>
+	</ul>
+</div>
 <p id="notice"><%= notice %></p>
+<div id="bodymiddleMainPan">
+		<h2>  <%= @recipe.nazwa %></h2>
 
-<p>
-  <b>Nazwa:</b>
-  <%= @recipe.nazwa %>
-</p>
 <p>
 <%= image_tag @recipe.photo.url(:small) %>
 </p>
@@ -44,3 +51,5 @@
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
+</div>
+</div>
