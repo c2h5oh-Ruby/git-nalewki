@@ -10,6 +10,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'acts-as-taggable-on'
 # Use unicorn as the web server
 # gem 'unicorn'
+gem 'devise', '1.1.rc0'  
 
 # Deploy with Capistrano
 # gem 'capistrano'

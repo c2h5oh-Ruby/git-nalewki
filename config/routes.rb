@@ -1,4 +1,6 @@
 Nalewki::Application.routes.draw do
+  devise_for :users
+
   resources :recipes do
   collection do
     get :tags
