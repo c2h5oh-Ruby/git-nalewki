@@ -4,17 +4,15 @@
   <b>Nazwa:</b>
   <%= @recipe.nazwa %>
 </p>
+
 <p>
-<%= image_tag @recipe.photo.url(:small) %>
-</p>
-<p>
-  <b>Przepis:</b>
-  <%= @recipe.przepis %>
+  <b>Autor:</b>
+  <%= @recipe.autor %>
 </p>
 
 <p>
-  <b>Skladniki:</b>
-  <%= @recipe.skladniki %>
+  <b>Trudnoœæ:</b>
+  <%= @recipe.trudnosc %>
 </p>
 
 <p>
@@ -23,15 +21,18 @@
 </p>
 
 <p>
-  <b>Trudnosc:</b>
-  <%= @recipe.trudnosc %>
+<%= image_tag @recipe.photo.url(:small) %>
 </p>
 
 <p>
-  <b>Autor:</b>
-  <%= @recipe.autor %>
+  <b>Sk³adniki:</b>
+  <%= @recipe.skladniki %>
 </p>
 
+<p>
+  <b>Przepis:</b>
+  <%= @recipe.przepis %>
+</p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
