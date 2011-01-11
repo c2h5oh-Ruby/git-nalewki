@@ -2590,3 +2590,793 @@ Migrating to CreateComments (20110111181424)
   [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
   [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_confirmation_token')
   [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+
+
+Started GET "/" for 153.19.193.170 at Tue Jan 11 19:26:30 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (189.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (120.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (120.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (80.1ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (244.3ms)
+Completed 200 OK in 853ms (Views: 82.8ms | ActiveRecord: 509.8ms)
+
+
+Started GET "/" for 153.19.193.170 at Tue Jan 11 19:45:19 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (323.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (121.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (80.1ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (246.1ms)
+Completed 200 OK in 675ms (Views: 53.9ms | ActiveRecord: 525.3ms)
+
+
+Started GET "/recipes/new" for 153.19.193.170 at Tue Jan 11 19:45:23 +0100 2011
+  Processing by RecipesController#new as HTML
+  [1m[35mSQL (157.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+ERROR: compiling _app_views_recipes__form_html_erb___992525446_76169040_534576 RAISED compile error
+/home/studinf/lmartyns/git-nalewki/app/views/recipes/_form.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+...pend= ( f.label :Dodaj zdjecie );@output_buffer.safe_concat(...
+                              ^
+Function body:           def _app_views_recipes__form_html_erb___992525446_76169040_534576(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "recipes/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('
+');@output_buffer.append_if_string=  form_for @recipe, :html => { :multipart => true } do |f| 
+   if @recipe.errors.any? 
+@output_buffer.safe_concat('    <div id="error_explanation">
+      <h2>');@output_buffer.append= ( pluralize(@recipe.errors.count, "error") );@output_buffer.safe_concat(' prohibited this recipe from being saved:</h2>
+
+      <ul>
+');@output_buffer.append_if_string=        @recipe.errors.full_messages.each do |msg| 
+@output_buffer.safe_concat('        <li>');@output_buffer.append= ( msg );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      </ul>
+    </div>
+');   end 
+@output_buffer.safe_concat('
+  <div class="field">
+    ');@output_buffer.append= ( f.label :nazwa );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :nazwa );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :autor );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :autor );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :cena );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :cena );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+   <div class="field">
+    ');@output_buffer.append= ( f.label :trudnosc );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :trudnosc );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :skladniki );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :skladniki );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :przepis );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :przepis );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+   ');@output_buffer.append= ( f.label :Tagi );@output_buffer.safe_concat('<br />
+   ');@output_buffer.append= ( f.text_field :tag_list );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+   ');@output_buffer.append= ( f.label :Dodaj zdjecie );@output_buffer.safe_concat('<br />
+   ');@output_buffer.append= ( f.file_field :photo );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  
+  
+
+  
+
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/studinf/lmartyns/git-nalewki/app/views/recipes/_form.html.erb:59:in `compile'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/template.rb:134:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications.rb:54:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/template.rb:127:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/render/partials.rb:294:in `render_partial'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/render/partials.rb:223:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/render/partials.rb:221:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/render/partials.rb:334:in `_render_partial'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:31:in `render'
+/home/studinf/lmartyns/git-nalewki/app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___764494816_76176650_0'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/template.rb:135:in `send'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/template.rb:135:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications.rb:54:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/template.rb:127:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:59:in `_render_template'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:56:in `_render_template'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_view/render/rendering.rb:26:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:92:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/rendering.rb:17:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-3.0.1/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/studinf/lmartyns/git-nalewki/app/controllers/recipes_controller.rb:35:in `new'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/abstract_controller/base.rb:150:in `process_action'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:435:in `_run__276736516__process_action__943997142__callbacks'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:409:in `send'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:93:in `send'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/notifications.rb:52:in `instrument'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/abstract_controller/base.rb:119:in `process'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/abstract_controller/rendering.rb:40:in `process'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal.rb:133:in `dispatch'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_controller/metal.rb:173:in `action'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:131:in `optimized_each'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/warden-0.10.7/lib/warden/manager.rb:35:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:32:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:12:in `cache'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-3.0.1/lib/active_record/query_cache.rb:31:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-3.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/railties-3.0.1/lib/rails/rack/logger.rb:13:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-3.0.1/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/railties-3.0.1/lib/rails/application.rb:168:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/railties-3.0.1/lib/rails/application.rb:77:in `send'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/railties-3.0.1/lib/rails/application.rb:77:in `method_missing'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/railties-3.0.1/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/home/studinf/lmartyns/.rvm/rubies/ree-1.8.7-2010.02/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/railties-3.0.1/lib/rails/commands/server.rb:65:in `start'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/railties-3.0.1/lib/rails/commands.rb:30
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/railties-3.0.1/lib/rails/commands.rb:27:in `tap'
+/home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/railties-3.0.1/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered recipes/_form.html.erb (53.5ms)
+Rendered recipes/new.html.erb within layouts/application (65.7ms)
+Completed   in 640ms
+
+ActionView::Template::Error (compile error
+/home/studinf/lmartyns/git-nalewki/app/views/recipes/_form.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+...pend= ( f.label :Dodaj zdjecie );@output_buffer.safe_concat(...
+                              ^):
+    41:    <%= f.text_field :tag_list %>
+    42:   </div>
+    43:   <div class="field">
+    44:    <%= f.label :Dodaj zdjecie %><br />
+    45:    <%= f.file_field :photo %>
+    46:   </div>
+    47:   
+  app/views/recipes/_form.html.erb:59:in `compile'
+  app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___764494816_76176650_0'
+  app/controllers/recipes_controller.rb:35:in `new'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (113.2ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (120.6ms)
+
+
+Started GET "/" for 153.19.193.170 at Tue Jan 11 19:50:26 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (360.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (41.9ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (41.2ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (127.4ms)
+Completed 200 OK in 520ms (Views: 52.9ms | ActiveRecord: 443.7ms)
+
+
+Started GET "/" for 153.19.193.170 at Tue Jan 11 19:50:31 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (244.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (41.9ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (42.5ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (126.5ms)
+Completed 200 OK in 393ms (Views: 49.1ms | ActiveRecord: 328.4ms)
+
+
+Started GET "/recipes/new" for 153.19.193.170 at Tue Jan 11 19:50:33 +0100 2011
+  Processing by RecipesController#new as HTML
+  [1m[36mSQL (282.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mActsAsTaggableOn::Tag Load (121.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_recipes__form_html_erb___992525446_77067680_534576 at /home/studinf/lmartyns/git-nalewki/app/views/recipes/_form.html.erb:2)
+Rendered recipes/_form.html.erb (192.6ms)
+Rendered recipes/new.html.erb within layouts/application (233.9ms)
+Completed 200 OK in 571ms (Views: 119.8ms | ActiveRecord: 403.7ms)
+
+
+Started POST "/recipes" for 153.19.193.170 at Tue Jan 11 19:50:59 +0100 2011
+  Processing by RecipesController#create as HTML
+  Parameters: {"commit"=>"Create Recipe", "authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "utf8"=>"\342\234\223", "recipe"=>{"photo"=>#<File:/home/studinf/lmartyns/tmp/RackMultipart20110111-23376-pu104o-0>, "autor"=>"iwksmd", "przepis"=>"loakfnhci", "nazwa"=>"ikiik", "tag_list"=>"sddd", "skladniki"=>"lasdki", "trudnosc"=>"1", "cena"=>"1999"}}
+  [1m[36mSQL (194.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+[paperclip] identify -format %wx%h '/home/studinf/lmartyns/tmp/stream20110111-23376-kbtr28-0.jpg[0]' 2>/dev/null
+[paperclip] convert '/home/studinf/lmartyns/tmp/stream20110111-23376-kbtr28-0.jpg[0]' -resize "150x150>" '/home/studinf/lmartyns/tmp/stream20110111-23376-kbtr28-020110111-23376-103p67w-0' 2>/dev/null
+  [1m[35mSQL (242.8ms)[0m  INSERT INTO "recipes" ("autor", "cena", "created_at", "nazwa", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "przepis", "skladniki", "trudnosc", "updated_at") VALUES ('iwksmd', '1999', '2011-01-11 18:51:01.335004', 'ikiik', 'image/jpeg', 'Zdjęcie0153.jpg', 1020037, '2011-01-11 18:51:00.438561', 'loakfnhci', 'lasdki', 1, '2011-01-11 18:51:01.335004')
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 'sddd')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = 'sddd') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name") VALUES ('sddd')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 8) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 8 AND "taggings".taggable_type = 'Recipe') AND ("taggings"."tag_id" IN (NULL)) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_type" IS NULL) AND ("taggings"."tagger_id" IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.1ms)[0m  SELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 10) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 8) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-11 18:51:01.612371', 10, 8, 'Recipe', NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/studinf/lmartyns/git-nalewki/public/zdjecia/8/small/Zdjęcie0153.jpg
+[paperclip] saving /home/studinf/lmartyns/git-nalewki/public/zdjecia/8/original/Zdjęcie0153.jpg
+Redirected to http://sigma.ug.edu.pl:8079/recipes/8
+Completed 302 Found in 1779ms
+
+
+Started GET "/recipes/8" for 153.19.193.170 at Tue Jan 11 19:51:02 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mSQL (242.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (41.6ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 8) LIMIT 1[0m
+Rendered recipes/show.html.erb within layouts/application (5.3ms)
+Completed   in 441ms
+
+ActionView::Template::Error (undefined method `comments' for nil:NilClass):
+    32:   <%= @recipe.autor %>
+    33: </p>
+    34: <p>
+    35: <% if @fortune.comments.any? %>
+    36:   <h2>Komentarze</h2>
+    37:   <%= render @fortune.comments %>
+    38: <% end %>
+  app/views/recipes/show.html.erb:35:in `_app_views_recipes_show_html_erb___1035960300_88000750_0'
+  app/controllers/recipes_controller.rb:24:in `show'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (89.3ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (130.3ms)
+
+
+Started POST "/recipes/9" for 153.19.193.170 at Tue Jan 11 19:52:22 +0100 2011
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "id"=>"9"}
+  [1m[35mSQL (285.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (123.7ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1[0m
+Completed   in 1001ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=9):
+  app/controllers/recipes_controller.rb:81:in `destroy'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (120.8ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (168.0ms)
+
+
+Started POST "/recipes/9" for 153.19.193.170 at Tue Jan 11 19:52:28 +0100 2011
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "id"=>"9"}
+  [1m[35mSQL (163.7ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (42.1ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1[0m
+Completed   in 221ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=9):
+  app/controllers/recipes_controller.rb:81:in `destroy'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (122.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (203.6ms)
+
+
+Started GET "/recipes" for 153.19.193.170 at Tue Jan 11 19:52:31 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (316.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (278.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (72.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 8) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (80.9ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (683.6ms)
+Completed 200 OK in 1170ms (Views: 338.4ms | ActiveRecord: 1363.0ms)
+
+
+Started GET "/recipes/8" for 153.19.193.170 at Tue Jan 11 19:52:37 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mSQL (241.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (41.9ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 8) LIMIT 1[0m
+  [1m[35mSQL (199.2ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 8)) AS subquery
+Rendered comments/_form.html.erb (44.0ms)
+Rendered recipes/show.html.erb within layouts/application (498.2ms)
+Completed 200 OK in 874ms (Views: 376.2ms | ActiveRecord: 482.2ms)
+
+
+Started POST "/recipes/8" for 153.19.193.170 at Tue Jan 11 19:52:41 +0100 2011
+  Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "id"=>"8"}
+  [1m[36mSQL (259.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (41.9ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 8) LIMIT 1
+  [1m[36mComment Load (82.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 8)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.1ms)[0m  SELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 8 AND "taggings".taggable_type = 'Recipe')
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."id" = 10)[0m
+  [1m[35mSQL (72.9ms)[0m  DELETE FROM "taggings" WHERE ("taggings"."id" = 11)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 8 AND "taggings".taggable_type = 'Recipe' AND (taggings.tagger_id IS NULL AND taggings.context = 'tags'))[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /home/studinf/lmartyns/git-nalewki/public/zdjecia/8/original/Zdjęcie0153.jpg
+[paperclip] deleting /home/studinf/lmartyns/git-nalewki/public/zdjecia/8/small/Zdjęcie0153.jpg
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "recipes" WHERE ("recipes"."id" = 8)
+Redirected to http://sigma.ug.edu.pl:8079/recipes
+Completed 302 Found in 1008ms
+
+
+Started GET "/recipes" for 153.19.193.170 at Tue Jan 11 19:52:42 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (204.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (79.2ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (155.1ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (276.7ms)
+Completed 200 OK in 651ms (Views: 122.3ms | ActiveRecord: 439.2ms)
+
+
+Started GET "/recipes/new" for 153.19.193.170 at Tue Jan 11 19:52:45 +0100 2011
+  Processing by RecipesController#new as HTML
+  [1m[35mSQL (203.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mActsAsTaggableOn::Tag Load (2.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_recipes__form_html_erb___992525446_87695800_534576 at /home/studinf/lmartyns/git-nalewki/app/views/recipes/_form.html.erb:2)
+Rendered recipes/_form.html.erb (14.9ms)
+Rendered recipes/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 317ms (Views: 96.3ms | ActiveRecord: 663.4ms)
+
+
+Started POST "/recipes" for 153.19.193.170 at Tue Jan 11 19:53:06 +0100 2011
+  Processing by RecipesController#create as HTML
+  Parameters: {"commit"=>"Create Recipe", "authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "utf8"=>"\342\234\223", "recipe"=>{"photo"=>#<File:/home/studinf/lmartyns/tmp/RackMultipart20110111-23376-1vfsubt-0>, "autor"=>"ja", "przepis"=>"kafjiuwvnia", "nazwa"=>"luki", "tag_list"=>"wodka", "skladniki"=>"ksjsj", "trudnosc"=>"1", "cena"=>"10000"}}
+  [1m[35mSQL (244.7ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[paperclip] identify -format %wx%h '/home/studinf/lmartyns/tmp/stream20110111-23376-1wwf2qj-0.jpg[0]' 2>/dev/null
+[paperclip] convert '/home/studinf/lmartyns/tmp/stream20110111-23376-1wwf2qj-0.jpg[0]' -resize "150x150>" '/home/studinf/lmartyns/tmp/stream20110111-23376-1wwf2qj-020110111-23376-a9psoq-0' 2>/dev/null
+  [1m[36mSQL (354.4ms)[0m  [1mINSERT INTO "recipes" ("autor", "cena", "created_at", "nazwa", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "przepis", "skladniki", "trudnosc", "updated_at") VALUES ('ja', '10000', '2011-01-11 18:53:08.287634', 'luki', 'image/jpeg', 'Zdjęcie0153.jpg', 1020037, '2011-01-11 18:53:07.495034', 'kafjiuwvnia', 'ksjsj', 1, '2011-01-11 18:53:08.287634')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE (name LIKE 'wodka')
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = 'wodka') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("name") VALUES ('wodka')
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 9) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.1ms)[0m  SELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 9 AND "taggings".taggable_type = 'Recipe') AND ("taggings"."tag_id" IN (NULL)) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_type" IS NULL) AND ("taggings"."tagger_id" IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1mSELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 11) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 9) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-11 18:53:08.688781', 11, 9, 'Recipe', NULL, NULL)
+[paperclip] Saving attachments.
+[paperclip] saving /home/studinf/lmartyns/git-nalewki/public/zdjecia/9/small/Zdjęcie0153.jpg
+[paperclip] saving /home/studinf/lmartyns/git-nalewki/public/zdjecia/9/original/Zdjęcie0153.jpg
+Redirected to http://sigma.ug.edu.pl:8079/recipes/9
+Completed 302 Found in 1998ms
+
+
+Started GET "/recipes/9" for 153.19.193.170 at Tue Jan 11 19:53:09 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mSQL (281.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (41.6ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1
+  [1m[36mSQL (120.5ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 9)) AS subquery[0m
+Rendered comments/_form.html.erb (4.5ms)
+Rendered recipes/show.html.erb within layouts/application (176.6ms)
+Completed 200 OK in 715ms (Views: 254.3ms | ActiveRecord: 444.0ms)
+
+
+Started POST "/recipes/9/comments" for 153.19.193.170 at Tue Jan 11 19:53:24 +0100 2011
+  Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"body"=>"sdwfef", "author"=>"luki"}, "commit"=>"Create Comment", "recipe_id"=>"9", "authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "utf8"=>"\342\234\223"}
+Completed   in 7ms
+
+NameError (uninitialized constant CommentsController::Fortune):
+  app/controllers/comments_controller.rb:3:in `_callback_before_1674'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (89.1ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (128.8ms)
+
+
+Started GET "/recipes/9" for 153.19.193.170 at Tue Jan 11 19:54:50 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mSQL (244.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (41.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1[0m
+  [1m[35mSQL (81.3ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 9)) AS subquery
+Rendered comments/_form.html.erb (4.3ms)
+Rendered recipes/show.html.erb within layouts/application (145.7ms)
+Completed 200 OK in 465ms (Views: 73.8ms | ActiveRecord: 367.2ms)
+
+
+Started GET "/recipes/9" for 153.19.193.170 at Tue Jan 11 19:54:54 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mSQL (277.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (41.7ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1
+  [1m[36mSQL (81.6ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 9)) AS subquery[0m
+Rendered comments/_form.html.erb (4.4ms)
+Rendered recipes/show.html.erb within layouts/application (286.5ms)
+Completed 200 OK in 667ms (Views: 212.0ms | ActiveRecord: 400.6ms)
+
+
+Started POST "/recipes/9/comments" for 153.19.193.170 at Tue Jan 11 19:54:57 +0100 2011
+  Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"body"=>"sdwfef", "author"=>"luki"}, "commit"=>"Create Comment", "recipe_id"=>"9", "authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "utf8"=>"\342\234\223"}
+  [1m[35mSQL (244.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed   in 295ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe without an ID):
+  app/controllers/comments_controller.rb:3:in `_callback_before_1870'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (125.4ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (132.4ms)
+
+
+Started GET "/recipes" for 153.19.193.170 at Tue Jan 11 19:56:26 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (279.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (41.8ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (42.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 9) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (79.5ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (177.2ms)
+Completed 200 OK in 523ms (Views: 23.1ms | ActiveRecord: 442.5ms)
+
+
+Started GET "/recipes/new" for 153.19.193.170 at Tue Jan 11 19:56:30 +0100 2011
+  Processing by RecipesController#new as HTML
+  [1m[36mSQL (243.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mActsAsTaggableOn::Tag Load (42.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_recipes__form_html_erb___992525446_87508750_534576 at /home/studinf/lmartyns/git-nalewki/app/views/recipes/_form.html.erb:2)
+Rendered recipes/_form.html.erb (54.8ms)
+Rendered recipes/new.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 323ms (Views: 23.9ms | ActiveRecord: 285.4ms)
+
+
+Started POST "/recipes" for 153.19.193.170 at Tue Jan 11 19:57:49 +0100 2011
+  Processing by RecipesController#create as HTML
+  Parameters: {"commit"=>"Create Recipe", "authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "utf8"=>"\342\234\223", "recipe"=>{"photo"=>#<File:/home/studinf/lmartyns/tmp/RackMultipart20110111-23376-1gy4xgc-0>, "autor"=>"akawa", "przepis"=>"dajo to i to", "nazwa"=>"wino", "tag_list"=>"piwo", "skladniki"=>"tak rak ", "trudnosc"=>"90", "cena"=>"10"}}
+  [1m[36mSQL (364.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+[paperclip] identify -format %wx%h '/home/studinf/lmartyns/tmp/stream20110111-23376-1cmh6f6-0.jpg[0]' 2>/dev/null
+[paperclip] convert '/home/studinf/lmartyns/tmp/stream20110111-23376-1cmh6f6-0.jpg[0]' -resize "150x150>" '/home/studinf/lmartyns/tmp/stream20110111-23376-1cmh6f6-020110111-23376-1l5g7p3-0' 2>/dev/null
+  [1m[35mSQL (242.8ms)[0m  INSERT INTO "recipes" ("autor", "cena", "created_at", "nazwa", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "przepis", "skladniki", "trudnosc", "updated_at") VALUES ('akawa', '10', '2011-01-11 18:57:50.422287', 'wino', 'image/jpeg', 'Zdjęcie0152.jpg', 1098470, '2011-01-11 18:57:49.901797', 'dajo to i to', 'tak rak ', 90, '2011-01-11 18:57:50.422287')
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 'piwo')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT "tags"."id" FROM "tags" WHERE ("tags"."name" = 'piwo') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name") VALUES ('piwo')[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 10) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE ("taggings".taggable_id = 10 AND "taggings".taggable_type = 'Recipe') AND ("taggings"."tag_id" IN (NULL)) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_type" IS NULL) AND ("taggings"."tagger_id" IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.1ms)[0m  SELECT "taggings"."id" FROM "taggings" WHERE ("taggings"."tag_id" = 12) AND ("taggings"."taggable_type" = 'Recipe') AND ("taggings"."taggable_id" = 10) AND ("taggings"."context" = 'tags') AND ("taggings"."tagger_id" IS NULL) AND ("taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES ('tags', '2011-01-11 18:57:50.684315', 12, 10, 'Recipe', NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/studinf/lmartyns/git-nalewki/public/zdjecia/10/small/Zdjęcie0152.jpg
+[paperclip] saving /home/studinf/lmartyns/git-nalewki/public/zdjecia/10/original/Zdjęcie0152.jpg
+Redirected to http://sigma.ug.edu.pl:8079/recipes/10
+Completed 302 Found in 1530ms
+
+
+Started GET "/recipes/10" for 153.19.193.170 at Tue Jan 11 19:57:51 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mSQL (243.7ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (41.7ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 10) LIMIT 1[0m
+  [1m[35mSQL (161.8ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 10)) AS subquery
+Rendered comments/_form.html.erb (4.5ms)
+Rendered recipes/show.html.erb within layouts/application (225.8ms)
+Completed 200 OK in 656ms (Views: 192.4ms | ActiveRecord: 1054.7ms)
+
+
+Started GET "/recipes" for 153.19.193.170 at Tue Jan 11 20:00:03 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (243.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (41.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (41.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 10) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (78.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 9) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (41.3ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (219.4ms)
+Completed 200 OK in 496ms (Views: 25.5ms | ActiveRecord: 446.8ms)
+
+
+Started GET "/recipes/10" for 153.19.193.170 at Tue Jan 11 20:02:31 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mSQL (398.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (121.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 10) LIMIT 1[0m
+  [1m[35mSQL (160.9ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 10)) AS subquery
+Rendered comments/_form.html.erb (4.5ms)
+Rendered recipes/show.html.erb within layouts/application (851.5ms)
+Completed 200 OK in 1842ms (Views: 931.9ms | ActiveRecord: 680.6ms)
+
+
+Started GET "/recipes/9" for 153.19.193.170 at Tue Jan 11 20:02:37 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mSQL (112.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (80.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1
+  [1m[36mSQL (84.5ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 9)) AS subquery[0m
+Rendered comments/_form.html.erb (4.5ms)
+Rendered recipes/show.html.erb within layouts/application (454.0ms)
+Completed 200 OK in 748ms (Views: 376.8ms | ActiveRecord: 277.1ms)
+
+
+Started POST "/recipes/9/comments" for 153.19.193.170 at Tue Jan 11 20:02:46 +0100 2011
+  Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"body"=>"dobrze", "author"=>"ja"}, "commit"=>"Create Comment", "recipe_id"=>"9", "authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "utf8"=>"\342\234\223"}
+  [1m[35mSQL (179.7ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed   in 230ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe without an ID):
+  app/controllers/comments_controller.rb:3:in `_callback_before_2626'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (126.1ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (133.0ms)
+
+
+Started GET "/recipes" for 153.19.193.170 at Tue Jan 11 20:04:16 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (257.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (81.1ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (51.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 10) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (128.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 9) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (80.7ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (394.5ms)
+Completed 200 OK in 851ms (Views: 62.7ms | ActiveRecord: 598.5ms)
+
+
+Started GET "/recipes/9" for 153.19.193.170 at Tue Jan 11 20:04:21 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mSQL (290.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (121.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1[0m
+  [1m[35mSQL (126.4ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 9)) AS subquery
+Rendered comments/_form.html.erb (4.3ms)
+Rendered recipes/show.html.erb within layouts/application (229.3ms)
+Completed 200 OK in 937ms (Views: 231.8ms | ActiveRecord: 537.4ms)
+
+
+Started POST "/recipes/9/comments" for 153.19.193.170 at Tue Jan 11 20:04:38 +0100 2011
+  Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"body"=>"dobre", "author"=>"opioa"}, "commit"=>"Create Comment", "recipe_id"=>"9", "authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "utf8"=>"\342\234\223"}
+  [1m[36mSQL (163.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed   in 178ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe without an ID):
+  app/controllers/comments_controller.rb:3:in `_callback_before_2908'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (124.8ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (131.6ms)
+
+
+Started GET "/recipes" for 153.19.193.170 at Tue Jan 11 20:04:55 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (248.8ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (41.9ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (159.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 10) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (78.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 9) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (42.3ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (337.1ms)
+Completed 200 OK in 608ms (Views: 21.4ms | ActiveRecord: 734.9ms)
+
+
+Started GET "/recipes/9" for 153.19.193.170 at Tue Jan 11 20:04:58 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mSQL (244.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (41.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1
+  [1m[36mSQL (82.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 9)) AS subquery[0m
+Rendered comments/_form.html.erb (4.3ms)
+Rendered recipes/show.html.erb within layouts/application (141.4ms)
+Completed 200 OK in 451ms (Views: 66.2ms | ActiveRecord: 368.2ms)
+
+
+Started POST "/recipes/9/comments" for 153.19.193.170 at Tue Jan 11 20:05:05 +0100 2011
+  Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"body"=>"tak jkest", "author"=>"ty"}, "commit"=>"Create Comment", "recipe_id"=>"9", "authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "utf8"=>"\342\234\223"}
+  [1m[35mSQL (235.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (41.6ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1[0m
+  [1m[35mSQL (117.2ms)[0m  INSERT INTO "comments" ("author", "body", "created_at", "recipe_id", "updated_at") VALUES ('ty', 'tak jkest', '2011-01-11 19:05:06.531569', 9, '2011-01-11 19:05:06.531569')
+Completed   in 769ms
+
+RuntimeError (In order to use respond_with, first you need to declare the formats your controller responds to in the class level):
+  app/controllers/comments_controller.rb:13:in `create'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (126.9ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (133.0ms)
+
+
+Started GET "/recipes" for 153.19.193.170 at Tue Jan 11 20:13:11 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (244.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (42.1ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (75.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 10) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (78.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 9) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (41.6ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (255.5ms)
+Completed 200 OK in 1124ms (Views: 303.9ms | ActiveRecord: 481.7ms)
+
+
+Started GET "/recipes/9" for 153.19.193.170 at Tue Jan 11 20:13:14 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mSQL (170.7ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (80.7ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1[0m
+  [1m[35mSQL (127.4ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 9)) AS subquery
+  [1m[36mComment Load (119.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 9)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1
+Rendered comments/_comment.html.erb (8.2ms)
+Rendered comments/_form.html.erb (2.2ms)
+Rendered recipes/show.html.erb within layouts/application (359.0ms)
+Completed 200 OK in 642ms (Views: 120.2ms | ActiveRecord: 498.2ms)
+
+
+Started POST "/recipes/9/comments" for 153.19.193.170 at Tue Jan 11 20:13:25 +0100 2011
+  Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"body"=>"tak jest", "author"=>"one"}, "commit"=>"Create Comment", "recipe_id"=>"9", "authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "utf8"=>"\342\234\223"}
+  [1m[36mSQL (117.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (41.6ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 9) LIMIT 1
+  [1m[36mSQL (276.6ms)[0m  [1mINSERT INTO "comments" ("author", "body", "created_at", "recipe_id", "updated_at") VALUES ('one', 'tak jest', '2011-01-11 19:13:26.074031', 9, '2011-01-11 19:13:26.074031')[0m
+Completed   in 631ms
+
+RuntimeError (In order to use respond_with, first you need to declare the formats your controller responds to in the class level):
+  app/controllers/comments_controller.rb:13:in `create'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (130.0ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (138.6ms)

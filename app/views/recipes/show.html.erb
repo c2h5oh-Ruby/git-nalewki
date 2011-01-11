@@ -32,9 +32,9 @@
   <%= @recipe.autor %>
 </p>
 <p>
-<% if @fortune.comments.any? %>
+<% if @recipe.comments.any? %>
   <h2>Komentarze</h2>
-  <%= render @fortune.comments %>
+  <%= render @recipe.comments %>
 <% end %>
 </p>
 <p>
