@@ -2505,3 +2505,88 @@ Started GET "/" for 127.0.0.1 at 2011-01-11 18:33:39 +0100
   [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
 Rendered recipes/index.html.erb within layouts/application (482.0ms)
 Completed 200 OK in 5742ms (Views: 5142.3ms | ActiveRecord: 80.0ms)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:2)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:2)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:2)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+  [1m[36mSQL (534.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (121.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (80.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateRecipes (20110105121304)
+Migrating to AddAttachmentPhotoToRecipe (20110106132015)
+Migrating to ActsAsTaggableOnMigration (20110107150518)
+Migrating to DeviseCreateUsers (20110111164955)
+Migrating to AddRpxToUsers (20110111172101)
+Migrating to CreateComments (20110111181424)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (46.6ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipe_id" integer, "author" varchar(255), "body" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110111181424')
+  [1m[36mSQL (122.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (45.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (83.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("comments")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("recipes")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("taggings")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type_and_context')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_taggings_on_tag_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("tags")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_confirmation_token')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+  [1m[36mSQL (399.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (120.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (80.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateRecipes (20110105121304)
+Migrating to AddAttachmentPhotoToRecipe (20110106132015)
+Migrating to ActsAsTaggableOnMigration (20110107150518)
+Migrating to DeviseCreateUsers (20110111164955)
+Migrating to AddRpxToUsers (20110111172101)
+Migrating to CreateComments (20110111181424)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (41.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (41.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (41.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("comments")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("recipes")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("taggings")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type_and_context')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_taggings_on_tag_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("tags")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_confirmation_token')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m

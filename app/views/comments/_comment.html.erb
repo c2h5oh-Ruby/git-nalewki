@@ -1,0 +1,5 @@
+<p>Autor:<br><%= comment.author %></p>
+<div class="comment">
+  <b>Body:</b> <%= comment.body %>
+</div>
+<%= link_to "Delete", [comment.recipe, comment], :confirm => "Are you sure?", :method => :delete %>

@@ -31,7 +31,16 @@
   <b>Autor:</b>
   <%= @recipe.autor %>
 </p>
-
+<p>
+<% if @fortune.comments.any? %>
+  <h2>Komentarze</h2>
+  <%= render @fortune.comments %>
+<% end %>
+</p>
+<p>
+<h2>Dodaj komentarz</h2>
+<%= render 'comments/form' %>
+</p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
