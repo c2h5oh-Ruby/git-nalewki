@@ -1,4 +1,4 @@
-
+﻿
 <% form_for @recipe, :html => { :multipart => true } do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
@@ -41,7 +41,7 @@
    <%= f.text_field :tag_list %>
   </div>
   <div class="field">
-   <%= f.label :Dodaj zdj�cie %><br />
+   <%= f.label :Dodaj zdjęcie %><br />
    <%= f.file_field :photo %>
   </div>
   
