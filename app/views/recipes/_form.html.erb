@@ -1,4 +1,4 @@
-
+﻿
 <% form_for @recipe, :html => { :multipart => true } do |f| %>
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
@@ -25,11 +25,11 @@
     <%= f.text_field :cena %>
   </div>
    <div class="field">
-    <%= f.label :trudnosc %><br />
+    <%= f.label :trudność %><br />
     <%= f.text_field :trudnosc %>
   </div>
   <div class="field">
-    <%= f.label :skladniki %><br />
+    <%= f.label :składniki %><br />
     <%= f.text_field :skladniki %>
   </div>
   <div class="field">

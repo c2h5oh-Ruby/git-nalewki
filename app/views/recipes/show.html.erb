@@ -14,15 +14,6 @@
 <p>
 <%= image_tag @recipe.photo.url(:small) %>
 </p>
-<p>
-  <b>Przepis:</b>
-  <%= @recipe.przepis %>
-</p>
-
-<p>
-  <b>Skladniki:</b>
-  <%= @recipe.skladniki %>
-</p>
 
 <p>
   <b>Cena:</b>
@@ -32,6 +23,16 @@
 <p>
   <b>Trudnosc:</b>
   <%= @recipe.trudnosc %>
+</p>
+
+<p>
+  <b>Skladniki:</b>
+  <%= @recipe.skladniki %>
+</p>
+
+<p>
+  <b>Przepis:</b>
+  <%= @recipe.przepis %>
 </p>
 
 <p>
