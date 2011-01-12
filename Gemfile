@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 group :development, :test do
- gem 'ajaxful_rating'
+ 
 end
 
 gem 'rails'
@@ -15,6 +15,7 @@ gem 'devise'
 gem 'nifty-generators'  
 gem 'devise_rpx_connectable' 
 
+gem 'ajaxful_rating', '3.0.0.beta3'
 
 # Deploy with Capistrano
 # gem 'capistrano'

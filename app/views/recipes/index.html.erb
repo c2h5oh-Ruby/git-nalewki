@@ -26,7 +26,7 @@ Naszą aplikacja przeznaczona jest dla miłośników oraz degustatorów, którzy
     <th>Trudnosc</th>
 	<th>Cena</th>
     <th>Autor</th>
-    <th></th>
+    <th>Ocena</th>
     <th></th>
   </tr>
 
@@ -36,6 +36,7 @@ Naszą aplikacja przeznaczona jest dla miłośników oraz degustatorów, którzy
     <td><%= recipe.trudnosc %></td>
 	<td><%= recipe.cena %></td>
     <td><%= recipe.autor %></td>
+	<td><%= ratings_for recipe, :static %>(Głosów: <%= recipe.rates.count %>)</td>
     <td><%= link_to 'Pokaż przepis', recipe %></td>
     
   </tr>

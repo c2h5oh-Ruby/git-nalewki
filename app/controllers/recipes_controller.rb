@@ -66,4 +66,10 @@ end
     respond_with(@recipe)
     
   end
+  
+   def rate
+    @recipe = Recipe.find(params[:id])
+    @recipe.rate(params[:stars], current_user)
+    redirect_to @recipe
+   end
 end

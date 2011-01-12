@@ -1,4 +1,4 @@
-Nalewki::Application.routes.draw do
+Nalewki::Application.routes.draw do |map|
 
 
   devise_for :users
@@ -10,6 +10,8 @@ Nalewki::Application.routes.draw do
   end
 end
 root :to => "recipes#index"
+
+map.resources :recipes, :member => {:rate => :post }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
