@@ -1,18 +1,20 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
+group :development, :test do
+ gem 'ajaxful_rating'
+end
 
+gem 'rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'paperclip'
 gem 'jquery-rails'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'acts-as-taggable-on'
-# Use unicorn as the web server
-# gem 'unicorn'
-gem 'devise', '1.1.3' 
+gem 'devise' 
 gem 'nifty-generators'  
 gem 'devise_rpx_connectable' 
+
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -29,6 +31,4 @@ gem 'devise_rpx_connectable'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+

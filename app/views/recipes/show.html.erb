@@ -1,12 +1,4 @@
-<div id="container">
-<div id="topPan">
-	<img src="../images/logo.gif" title="Liqidity Graph" alt="Liqidity Graph" width="260" height="56" border="0" class="logo" />
-	<ul>
-		<li><%= link_to_rpx "Zaloguj sie", user_session_url %> </li>
-		<li><%= link_to "Katalog", recipes_path %></li>
-		<li><%= link_to 'Dodaj', new_recipe_path %></li>
-	</ul>
-</div>
+
 <p id="notice"><%= notice %></p>
 <div id="bodymiddleMainPan">
 		<h2>  <%= @recipe.nazwa %></h2>
@@ -38,9 +30,12 @@
 <p>
   <b>Autor:</b>
   <%= @recipe.autor %>
-  <span style="float:right; padding-right:20px;"><%= link_to 'Usuń przepis', @recipe, :confirm => 'Are you sure?', :method => :delete %></span>
+ <% if user_signed_in? %>
+  <span style="float:right; padding-right:20px;"><%= link_to 'Usuń przepis', @recipe, :confirm => 'Jestes pewien?', :method => :delete %></span>
   <span style="float:right; padding-right:20px;"><%= link_to 'Popraw przepis', edit_recipe_path(@recipe) %></span>
+ <% end %>
 </p>
+
 <p>
 <% if @recipe.comments.any? %>
   <b>Opinie:</b>

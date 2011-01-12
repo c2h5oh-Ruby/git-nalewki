@@ -9,21 +9,7 @@ $(function(){
 	$("#tag-cloud").tagCloud({"direction":"vertical", "easein":"easeOutBack", "speed":2000});
 });
 </script>
-<div id="container">
-<div id="topPan">
-	<img src="../images/logo.gif" title="Liqidity Graph" alt="Liqidity Graph" width="260" height="56" border="0" class="logo" />
-	<ul>
-	<li><%= link_to_rpx "Zaloguj sie", user_session_url %> </li>
-		<li><%= link_to "Katalog", recipes_path %></li>
-		<li><%= link_to 'Dodaj', new_recipe_path %></li>
-<%= form_tag recipes_path, :method => :get, :remote => true do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Szukaj", :name => nil %>
-  </p>
-<% end %>
-	</ul>
-</div>
+
 
 <div id="bodyPan">
 	<div id="bodytopPan">

@@ -8244,3 +8244,597 @@ Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatc
   [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%kl%') ORDER BY created_at desc[0m
 Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (314.0ms)
 Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (438.0ms)
+DEPRECATION WARNING: The I18n message 'devise.mailer.confirmation_instructions' is deprecated. Please use 'devise.mailer.confirmation_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:5)
+DEPRECATION WARNING: The I18n message 'devise.mailer.reset_password_instructions' is deprecated. Please use 'devise.mailer.reset_password_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:5)
+DEPRECATION WARNING: The I18n message 'devise.mailer.unlock_instructions' is deprecated. Please use 'devise.mailer.unlock_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:5)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 16:59:10 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (15.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 437ms (Views: 38.0ms | ActiveRecord: 17.0ms)
+DEPRECATION WARNING: The I18n message 'devise.mailer.confirmation_instructions' is deprecated. Please use 'devise.mailer.confirmation_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.reset_password_instructions' is deprecated. Please use 'devise.mailer.reset_password_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.unlock_instructions' is deprecated. Please use 'devise.mailer.unlock_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.confirmation_instructions' is deprecated. Please use 'devise.mailer.confirmation_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.reset_password_instructions' is deprecated. Please use 'devise.mailer.reset_password_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.unlock_instructions' is deprecated. Please use 'devise.mailer.unlock_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 17:27:20 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 356ms (Views: 39.0ms | ActiveRecord: 2.0ms)
+DEPRECATION WARNING: The I18n message 'devise.mailer.confirmation_instructions' is deprecated. Please use 'devise.mailer.confirmation_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.reset_password_instructions' is deprecated. Please use 'devise.mailer.reset_password_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.unlock_instructions' is deprecated. Please use 'devise.mailer.unlock_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 17:30:20 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 12)) AS subquery
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1
+Rendered comments/_comment.html.erb (10.0ms)
+Rendered comments/_form.html.erb (3.0ms)
+Rendered recipes/show.html.erb within layouts/application (134.0ms)
+Completed 200 OK in 471ms (Views: 156.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 17:33:56 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 12)) AS subquery[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+Rendered comments/_comment.html.erb (13.0ms)
+Rendered comments/_form.html.erb (3.0ms)
+Rendered recipes/show.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 179ms (Views: 95.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in?authenticity_token=od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc%3d" for 127.0.0.1 at 2011-01-12 17:34:49 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"token"=>"9fea86496d8e135284ad888574f90498dca395ed", "authenticity_token"=>"od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc="}
+Completed   in 824ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"token"=>"9fea86496d8e135284ad888574f90498dca395ed", "authenticity_token"=>"od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc="}
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/devise-1.1.3/app/views/devise/shared/_links.erb (2.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/devise-1.1.3/app/views/devise/sessions/new.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 133ms (Views: 96.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 17:35:11 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 132ms (Views: 36.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 17:35:14 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 12)) AS subquery[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+Rendered comments/_comment.html.erb (13.0ms)
+Rendered comments/_form.html.erb (3.0ms)
+Rendered recipes/show.html.erb within layouts/application (109.0ms)
+Completed 200 OK in 180ms (Views: 130.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 17:40:25 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 12)) AS subquery
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1
+Rendered comments/_comment.html.erb (14.0ms)
+Rendered comments/_form.html.erb (38.0ms)
+Rendered recipes/show.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 198ms (Views: 129.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-12 17:40:29 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 115ms (Views: 51.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in?authenticity_token=od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc%3d" for 127.0.0.1 at 2011-01-12 17:40:37 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"token"=>"6bc699a35167bd4f124a42438c49ad1f5ee0861c", "authenticity_token"=>"od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc="}
+Completed   in 770ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"token"=>"6bc699a35167bd4f124a42438c49ad1f5ee0861c", "authenticity_token"=>"od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc="}
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/devise-1.1.3/app/views/devise/shared/_links.erb (1.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/devise-1.1.3/app/views/devise/sessions/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 58ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 17:40:51 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 128ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: The I18n message 'devise.mailer.confirmation_instructions' is deprecated. Please use 'devise.mailer.confirmation_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.reset_password_instructions' is deprecated. Please use 'devise.mailer.reset_password_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.unlock_instructions' is deprecated. Please use 'devise.mailer.unlock_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 17:56:15 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (1.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+Rendered recipes/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 340ms (Views: 36.0ms | ActiveRecord: 3.0ms)
+DEPRECATION WARNING: The I18n message 'devise.mailer.confirmation_instructions' is deprecated. Please use 'devise.mailer.confirmation_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.reset_password_instructions' is deprecated. Please use 'devise.mailer.reset_password_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.unlock_instructions' is deprecated. Please use 'devise.mailer.unlock_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 17:57:37 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 423ms (Views: 47.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users/sign_in?authenticity_token=od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc%3d" for 127.0.0.1 at 2011-01-12 17:57:59 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"token"=>"14c90a7ac195dced64f0bbce055afd9c098cb1eb", "authenticity_token"=>"od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc="}
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."rpx_identifier" = 'https://www.google.com/profiles/118392956114277074136') LIMIT 1[0m
+  [1m[35mAREL (18.0ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "password_salt", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "remember_token", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at", "rpx_identifier") VALUES ('adam.kawczynski@gmail.com', '', '', NULL, '2011-01-12 16:58:00.713173', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2011-01-12 16:58:00.713173', '2011-01-12 16:58:00.713173', 'https://www.google.com/profiles/118392956114277074136')
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-01-12 16:58:00.973188', "current_sign_in_at" = '2011-01-12 16:58:00.973188', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2011-01-12 16:58:00.973188' WHERE ("users"."id" = 3)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1199ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 17:58:01 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 153ms (Views: 91.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2011-01-12 17:58:07 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 54ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 17:58:07 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 112ms (Views: 49.0ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/users/sign_in?authenticity_token=od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc%3d" for 127.0.0.1 at 2011-01-12 17:58:15 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"token"=>"52c425f88a4a28e445ab43cd779aa12567ce182c", "authenticity_token"=>"od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc="}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."rpx_identifier" = 'https://www.google.com/profiles/118392956114277074136') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2011-01-12 16:58:16.796093', "sign_in_count" = 2, "updated_at" = '2011-01-12 16:58:16.797093' WHERE ("users"."id" = 3)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 901ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 17:58:16 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (103.0ms)
+Completed 200 OK in 201ms (Views: 124.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 17:58:23 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+Rendered comments/_comment.html.erb (10.0ms)
+Rendered comments/_form.html.erb (2.0ms)
+Rendered recipes/show.html.erb within layouts/application (124.0ms)
+Completed 200 OK in 212ms (Views: 145.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-12 17:58:33 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 155ms (Views: 93.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2011-01-12 17:58:34 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 56ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 17:58:34 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 129ms (Views: 68.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 17:58:36 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1
+Rendered comments/_comment.html.erb (13.0ms)
+Rendered comments/_form.html.erb (3.0ms)
+Rendered recipes/show.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 166ms (Views: 98.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-12 17:58:46 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 125ms (Views: 84.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/users/sign_in?authenticity_token=od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc%3d" for 127.0.0.1 at 2011-01-12 17:59:24 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"token"=>"7933ac76bfd02bfcf9d4267949c565e48d56bfb0", "authenticity_token"=>"od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc="}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."rpx_identifier" = 'https://www.google.com/profiles/118392956114277074136') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-01-12 16:58:16.796093', "current_sign_in_at" = '2011-01-12 16:59:25.031996', "sign_in_count" = 3, "updated_at" = '2011-01-12 16:59:25.031996' WHERE ("users"."id" = 3)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 891ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 17:59:25 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 155ms (Views: 91.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 17:59:32 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+Rendered comments/_comment.html.erb (14.0ms)
+Rendered comments/_form.html.erb (3.0ms)
+Rendered recipes/show.html.erb within layouts/application (136.0ms)
+Completed 200 OK in 232ms (Views: 156.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 18:01:40 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+Rendered comments/_comment.html.erb (13.0ms)
+Rendered comments/_form.html.erb (3.0ms)
+Rendered recipes/show.html.erb within layouts/application (135.0ms)
+Completed 200 OK in 220ms (Views: 155.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-12 18:01:50 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 157ms (Views: 95.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-12 18:03:01 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (85.0ms)
+Completed 200 OK in 175ms (Views: 106.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2011-01-12 18:03:11 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendered recipes/index.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 159ms (Views: 96.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 18:03:17 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+Rendered comments/_comment.html.erb (14.0ms)
+Rendered comments/_form.html.erb (3.0ms)
+Rendered recipes/show.html.erb within layouts/application (122.0ms)
+Completed 200 OK in 210ms (Views: 142.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2011-01-12 18:03:21 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 18:03:21 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (0.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 127ms (Views: 87.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 18:03:24 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1
+Rendered comments/_comment.html.erb (14.0ms)
+Rendered comments/_form.html.erb (3.0ms)
+Rendered recipes/show.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 163ms (Views: 97.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 18:03:25 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+Rendered comments/_comment.html.erb (13.0ms)
+Rendered comments/_form.html.erb (2.0ms)
+Rendered recipes/show.html.erb within layouts/application (91.0ms)
+Completed 200 OK in 157ms (Views: 112.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in?authenticity_token=od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc%3d" for 127.0.0.1 at 2011-01-12 18:03:33 +0100
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"token"=>"beadd770565409154c7391445ff2a04fa585fa31", "authenticity_token"=>"od7Z4lPYM1OGe19tbovxNT8qJsS3566n2GquDk3uNPc="}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."rpx_identifier" = 'https://www.google.com/profiles/118392956114277074136') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-01-12 16:59:25.031995', "current_sign_in_at" = '2011-01-12 17:03:34.131244', "sign_in_count" = 4, "updated_at" = '2011-01-12 17:03:34.132244' WHERE ("users"."id" = 3)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 945ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 18:03:34 +0100
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.0ms)[0m  SELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendered recipes/index.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 157ms (Views: 96.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 18:03:37 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+Rendered comments/_comment.html.erb (13.0ms)
+Rendered comments/_form.html.erb (3.0ms)
+Rendered recipes/show.html.erb within layouts/application (157.0ms)
+Completed 200 OK in 248ms (Views: 178.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 18:05:18 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+Rendered comments/_comment.html.erb (13.0ms)
+Rendered comments/_form.html.erb (3.0ms)
+Rendered recipes/show.html.erb within layouts/application (118.0ms)
+Completed 200 OK in 187ms (Views: 138.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2011-01-12 18:05:22 +0100
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 55ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-12 18:05:22 +0100
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mActsAsTaggableOn::Tag Load (1.0ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 112ms (Views: 69.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/recipes/12" for 127.0.0.1 at 2011-01-12 18:05:24 +0100
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 12) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+Rendered comments/_comment.html.erb (4.0ms)
+Rendered comments/_form.html.erb (4.0ms)
+Rendered recipes/show.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 156ms (Views: 89.0ms | ActiveRecord: 2.0ms)
+DEPRECATION WARNING: The I18n message 'devise.mailer.confirmation_instructions' is deprecated. Please use 'devise.mailer.confirmation_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.reset_password_instructions' is deprecated. Please use 'devise.mailer.reset_password_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.unlock_instructions' is deprecated. Please use 'devise.mailer.unlock_instructions.subject' instead. (called from <top (required)> at D:/Programy/git-nalewki/config/environment.rb:6)

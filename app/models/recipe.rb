@@ -1,6 +1,7 @@
 class Recipe < ActiveRecord::Base
 has_many :comments, :dependent => :destroy
   acts_as_taggable_on :tags
+  ajaxful_rateable :stars => 5, :dimensions => [:trudnosc]
   ActsAsTaggableOn::TagList.delimiter = " "
   has_attached_file :photo, :styles => { :small => "150x150>" },
                   :url  => "/zdjecia/:id/:style/:basename.:extension",
