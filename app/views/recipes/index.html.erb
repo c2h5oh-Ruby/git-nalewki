@@ -13,40 +13,32 @@ $(function(){
 
 <div id="bodyPan">
 	<div id="bodytopPan">
-		<h2>Informacje o serwisie Git-nalewki</h2>
-		<p>Serwis realizowany w ramach projektu z Architektury Serwisów Internetowych</p>
-		<p>Git-nalewki umożliwia dzielenie się przepisami na wyszukane i wykwintne trunki zwane nalewkami, komentowanie i ocenianie przepisów innych użytkowników</p>
-Naszą aplikacja przeznaczona jest dla miłośników oraz degustatorów, którzy lubią mieć w swoim barku coś czego nie można dostać w sklepie i czym będą mogli poczęstować gości w czasie spotkań rodzinnych i towarzyskich</p>
+		<p>
+		Niniejszy serwis  jest projektem realizowanym w ramach zajęć  z Architektury Serwisów Internetowych.  
+		Git-nalewki umożliwia dzielenie się przepisami na wyszukane i wykwintne trunki zwane nalewkami, komentowanie i ocenianie przepisów innych użytkowników
+		Nasza aplikacja przeznaczona jest dla miłośników oraz degustatorów, którzy lubią mieć w swoim barku coś czego nie można dostać w sklepie i czym będą mogli poczęstować gości w czasie spotkań rodzinnych i towarzyskich
+		Projekt realizuje grupa c2h50h (c2h5oh-Ruby / git-nalewki)
+		</p>
 	</div>
-		<div id="bodymiddleMainPan">
-		<h2>Dodane Przepisy</h2>
-  	<table style="margin:0 auto;">
-  <tr>
-    <th>Nazwa</th>
-    <th>Trudnosc</th>
-	<th>Cena</th>
-    <th>Autor</th>
-    <th>Ocena</th>
-    <th></th>
-  </tr>
+	<% @recipes.each do |recipe| %>
+		<div class="recipe">
+<div class="image"><%= image_tag recipe.photo.url() %></div>
+<div class="opis">
+<h1><%= link_to recipe.nazwa, recipe %></h1>
+<div style="float:right;  width:125px; height:30px;"><%= ratings_for recipe, :static %>(Głosów: <%= recipe.rates.count %>)</div>
+<div style="float:right;  width:125px;  width:400px; height:45px; margin-right:50px;">
+<p style="height:22px; width:100%;  padding:0px; margin:0px;">
+<span style="padding:2px 2px 0px 5px; float:left;" >Autor: <b><%= recipe.autor %></b></span>
+<span style="padding:2px 2px 0px 5px; float:right;" >Poziom trudności: <b><%= recipe.trudnosc %></b></span>
+</p>
+<p style="height:22px; width:100%;  padding:0px; margin:0px;">
+<span style="padding:2px 2px 0px 5px; float:left;" >Liczba komentarzy: <b><%= recipe.comments.count %></b></span>
+<span style="padding:2px 2px 0px 5px; float:right;" >Szacunkowy koszt: <b><%= recipe.cena %></b></span>
+</p>
+</div>
 
-<% @recipes.each do |recipe| %>
-  <tr>
-    <td><%= recipe.nazwa %></td>
-    <td><%= recipe.trudnosc %></td>
-	<td><%= recipe.cena %></td>
-    <td><%= recipe.autor %></td>
-	<td><%= ratings_for recipe, :static %>(Głosów: <%= recipe.rates.count %>)</td>
-    <td><%= link_to 'Pokaż przepis', recipe %></td>
-    
-  </tr>
-<% end %>
-</table>
 </div>
 </div>
-<div id="tag-cloud">
-<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  <%= link_to tag.name, tags_recipes_path(:name=>tag.name), :class => css_class %>
 <% end %>
 </div>
 </div>

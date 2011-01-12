@@ -1,4 +1,4 @@
-﻿class RecipesController < ApplicationController
+class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.xml
 
@@ -40,7 +40,7 @@ end
   def create
     @recipe = Recipe.new(params[:recipe])
   if @recipe.save
-    redirect_to recipes_path, :notice => 'Przepis dodany pomyślnie.'
+    redirect_to recipes_path, :notice => 'Przepis dodany pomyslnie.'
   else
     render 'new'
   end
@@ -52,7 +52,7 @@ end
   def update
     @recipe = Recipe.find(params[:id])
   if @recipe.update_attributes(params[:recipe])
-    redirect_to recipes_path, :notice => 'Przepis poprawiony pomyślnie.'
+    redirect_to recipes_path, :notice => 'Przepis poprawiony pomyslnie.'
   else
     render 'edit'
   end
