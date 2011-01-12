@@ -25292,3 +25292,672 @@ Started GET "/recipes/" for 127.0.0.1 at Wed Jan 12 22:43:20 +0100 2011
   [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 11)[0m
 Rendered recipes/index.html.erb within layouts/application (160.3ms)
 Completed 200 OK in 312ms (Views: 157.8ms | ActiveRecord: 8.4ms)
+DEPRECATION WARNING: The I18n message 'devise.mailer.confirmation_instructions' is deprecated. Please use 'devise.mailer.confirmation_instructions.subject' instead. (called from /home/chief/public_git/swinia/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.reset_password_instructions' is deprecated. Please use 'devise.mailer.reset_password_instructions.subject' instead. (called from /home/chief/public_git/swinia/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: The I18n message 'devise.mailer.unlock_instructions' is deprecated. Please use 'devise.mailer.unlock_instructions.subject' instead. (called from /home/chief/public_git/swinia/git-nalewki/config/environment.rb:6)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from /home/chief/public_git/swinia/git-nalewki/config/routes.rb:1)
+
+
+Started GET "/recipes/" for 127.0.0.1 at Wed Jan 12 22:47:17 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[36mSQL (2.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 14)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 13)[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.7ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.4ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 11)[0m
+Rendered recipes/index.html.erb within layouts/application (163.6ms)
+Completed 200 OK in 296ms (Views: 161.8ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at Wed Jan 12 22:47:31 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (1.8ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 14)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 13)[0m
+  [1m[35mSQL (0.8ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.8ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 11)[0m
+Rendered recipes/index.html.erb within layouts/application (220.2ms)
+Completed 200 OK in 272ms (Views: 219.4ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at Wed Jan 12 22:48:23 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (0.8ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mSQL (0.9ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 14)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 13)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.6ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 11)[0m
+Rendered recipes/index.html.erb within layouts/application (166.1ms)
+Completed 200 OK in 273ms (Views: 166.2ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at Wed Jan 12 22:50:04 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mSQL (1.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.4ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (1.3ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 14)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (1.7ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 13)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (1.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.4ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.4ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.3ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.5ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 11)[0m
+Rendered recipes/index.html.erb within layouts/application (258.9ms)
+Completed 200 OK in 317ms (Views: 254.2ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at Wed Jan 12 22:50:45 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 14)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 13)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 11)[0m
+Rendered recipes/index.html.erb within layouts/application (208.5ms)
+Completed 200 OK in 262ms (Views: 212.1ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at Wed Jan 12 22:52:10 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (1.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (0.7ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 14 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 14)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 13 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 13)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 12 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 12)[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.8ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT SUM("rates"."stars") AS sum_id FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "rates" WHERE ("rates".rateable_id = 11 AND "rates".rateable_type = 'Recipe' AND ("rates"."dimension" IS NULL))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE ("comments".recipe_id = 11)[0m
+Rendered recipes/index.html.erb within layouts/application (160.1ms)
+Completed 200 OK in 275ms (Views: 162.6ms | ActiveRecord: 7.2ms)

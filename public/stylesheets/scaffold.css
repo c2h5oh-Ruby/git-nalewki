@@ -15,7 +15,8 @@ body{padding:0px; margin:0px; background:url(../images/main-bg.jpg) 0 0 repeat-x
 /*----BODY PANEL----*/
 #bodyPan{width:778px; position:relative;  margin:0 auto;}
 #bodytopPan{width:750px;  position:relative; margin:0 auto; padding: 17px 0 0 0; height:`200px;}
-#bodytopPan p {font-weight:bold; color:#000000; text-align:justify; }
+#bodytopPan p { color:#000000; text-align:center; }
+#bodytopPan h2{width:500px; height:70px; background:url(images/icon1.gif) 0 0 no-repeat ; color:#81C227; font:20px/70px "Trebuchet MS",Arial, Helvetica, sans-serif; padding:0 0 0 98px; }
 
 
 .recipe
