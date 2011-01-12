@@ -4762,3 +4762,164 @@ Rendered comments/_comment.html.erb (20.1ms)
 Rendered comments/_form.html.erb (4.1ms)
 Rendered recipes/show.html.erb within layouts/application (77.6ms)
 Completed 200 OK in 221ms (Views: 92.8ms | ActiveRecord: 1.5ms)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+DEPRECATION WARNING: :name_prefix was deprecated in the new router syntax. Use :as instead. (called from /home/studinf/lmartyns/git-nalewki/config/routes.rb:4)
+
+
+Started GET "/recipes/10" for 153.19.193.170 at Wed Jan 12 01:13:21 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mSQL (487.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (121.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (81.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 10) LIMIT 1[0m
+Completed   in 823ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=10):
+  app/controllers/recipes_controller.rb:22:in `show'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (112.8ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (119.9ms)
+
+
+Started GET "/recipes/10" for 153.19.193.170 at Wed Jan 12 01:15:59 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mSQL (406.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (121.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 10) LIMIT 1[0m
+Completed   in 589ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=10):
+  app/controllers/recipes_controller.rb:22:in `show'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (110.5ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (117.5ms)
+
+
+Started GET "/recipes/10" for 153.19.193.170 at Wed Jan 12 01:17:21 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mSQL (404.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (159.9ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 10) LIMIT 1[0m
+Completed   in 623ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=10):
+  app/controllers/recipes_controller.rb:22:in `show'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (111.3ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (118.0ms)
+
+
+Started GET "/recipes/10" for 153.19.193.170 at Wed Jan 12 01:19:54 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mSQL (282.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (120.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 10) LIMIT 1[0m
+Completed   in 491ms
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=10):
+  app/controllers/recipes_controller.rb:22:in `show'
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (80.6ms)
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (115.6ms)
+
+
+Started GET "/" for 153.19.193.170 at Wed Jan 12 01:20:23 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (324.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (82.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (120.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 11) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (118.1ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (466.3ms)
+Completed 200 OK in 1298ms (Views: 567.0ms | ActiveRecord: 1046.8ms)
+
+
+Started GET "/recipes/11" for 153.19.193.170 at Wed Jan 12 01:20:32 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSQL (282.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (160.8ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1[0m
+  [1m[35mSQL (161.7ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 11)) AS subquery
+  [1m[36mComment Load (120.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 11)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1
+Rendered comments/_comment.html.erb (7.4ms)
+Rendered comments/_form.html.erb (2.2ms)
+Rendered recipes/show.html.erb within layouts/application (373.0ms)
+Completed 200 OK in 1072ms (Views: 184.7ms | ActiveRecord: 724.9ms)
+
+
+Started POST "/recipes/11/comments" for 153.19.193.170 at Wed Jan 12 01:20:49 +0100 2011
+  Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"body"=>"super", "author"=>"Opiat"}, "commit"=>"Create Comment", "recipe_id"=>"11", "authenticity_token"=>"nnewymOZZlg1j/05KIVOMXLEHhhG4Bw8n4ubYyKifac=", "utf8"=>"\342\234\223"}
+  [1m[36mSQL (405.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRecipe Load (120.8ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1
+  [1m[36mSQL (161.4ms)[0m  [1mINSERT INTO "comments" ("author", "body", "created_at", "recipe_id", "updated_at") VALUES ('Opiat', 'super', '2011-01-12 00:20:50.601835', 11, '2011-01-12 00:20:50.601835')[0m
+Redirected to http://sigma.ug.edu.pl:8079/recipes
+Completed 302 Found in 1284ms
+
+
+Started GET "/recipes" for 153.19.193.170 at Wed Jan 12 01:20:51 +0100 2011
+  Processing by RecipesController#index as HTML
+  [1m[35mSQL (283.9ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (160.8ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE (nazwa like '%%') ORDER BY created_at desc[0m
+  [1m[35mActsAsTaggableOn::Tag Load (113.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 11) AND ("taggings".taggable_type = 'Recipe')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (119.5ms)[0m  [1mSELECT tags.*, COUNT(*) AS count FROM "tags" LEFT OUTER JOIN taggings ON tags.id = taggings.tag_id AND taggings.context = 'tags' INNER JOIN recipes ON recipes.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Recipe') AND (taggings.taggable_id IN(SELECT recipes.id FROM "recipes")) GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+Rendered recipes/index.html.erb within layouts/application (445.8ms)
+Completed 200 OK in 791ms (Views: 60.7ms | ActiveRecord: 678.1ms)
+
+
+Started GET "/recipes/11" for 153.19.193.170 at Wed Jan 12 01:20:57 +0100 2011
+  Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mSQL (282.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRecipe Load (82.8ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1[0m
+  [1m[35mSQL (160.0ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM "comments" WHERE ("comments".recipe_id = 11)) AS subquery
+  [1m[36mComment Load (120.5ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".recipe_id = 11)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE ("recipes"."id" = 11) LIMIT 1[0m
+Rendered comments/_comment.html.erb (7.2ms)
+Rendered comments/_form.html.erb (2.2ms)
+Rendered recipes/show.html.erb within layouts/application (475.4ms)
+Completed 200 OK in 1032ms (Views: 202.6ms | ActiveRecord: 645.7ms)
+
+
+Started GET "/recipes/11/comments/8" for 153.19.193.170 at Wed Jan 12 01:21:00 +0100 2011
+
+AbstractController::ActionNotFound (The action 'show' could not be found for CommentsController):
+  
+
+Rendered /home/studinf/lmartyns/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.4ms)

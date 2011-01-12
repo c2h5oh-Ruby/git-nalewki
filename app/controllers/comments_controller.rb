@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   end
 
   def new
-    respond_with @comment
+   respond_with @comment
   end
 
   def create
