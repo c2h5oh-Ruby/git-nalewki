@@ -10,12 +10,13 @@ class CommentsController < ApplicationController
   def create
     @comment = @recipe.comments.new params[:comment]
     @comment.save
-    respond_with @comment, :location => recipes_url
+    respond_with(@recipe)
   end
+ 
 
   def destroy
     @comment = @recipe.comments.find params[:id]
     @comment.destroy
-    respond_with @recipe
+   respond_with(@recipe)
   end
 end

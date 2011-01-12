@@ -1,5 +1,2 @@
-<p>Autor:<br><%= comment.author %></p>
-<div class="comment">
-  <b>Body:</b> <%= comment.body %>
-</div>
-<%= link_to "Delete", [comment.recipe, comment], :confirm => "Are you sure?", :method => :delete %>
+<p><span style="color:#FF0000; padding-left:5px;"><%= comment.author %></span> napisał <span style="color:#FF0000; padding-left:5px; font-weight:bold;">"<%= comment.body %>"</span> 
+<span style="padding-left:30px"><%= link_to "Usun komentarz", [comment.recipe, comment], :confirm => "Sure?", :method => :delete %></span><p>

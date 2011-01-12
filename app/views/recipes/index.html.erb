@@ -13,11 +13,18 @@ $(function(){
 <div id="topPan">
 	<img src="../images/logo.gif" title="Liqidity Graph" alt="Liqidity Graph" width="260" height="56" border="0" class="logo" />
 	<ul>
+	<li><%= link_to_rpx "Zaloguj sie", user_session_url %> </li>
 		<li><%= link_to "Katalog", recipes_path %></li>
 		<li><%= link_to 'Dodaj', new_recipe_path %></li>
-		<li><%= link_to_rpx "Zaloguj sie", user_session_url %> </li>
+<%= form_tag recipes_path, :method => :get, :remote => true do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Szukaj", :name => nil %>
+  </p>
+<% end %>
 	</ul>
 </div>
+
 <div id="bodyPan">
 	<div id="bodytopPan">
 		<h2>Informacje o git-nalewki</h2>
@@ -31,8 +38,8 @@ Naszą aplikacja przeznaczona jest dla miłośników oraz degustatorów, którzy
   <tr>
     <th>Nazwa</th>
     <th>Trudnosc</th>
+	<th>Cena</th>
     <th>Autor</th>
-    <th>Tagi</th>
     <th></th>
     <th></th>
   </tr>
@@ -41,11 +48,9 @@ Naszą aplikacja przeznaczona jest dla miłośników oraz degustatorów, którzy
   <tr>
     <td><%= recipe.nazwa %></td>
     <td><%= recipe.trudnosc %></td>
+	<td><%= recipe.cena %></td>
     <td><%= recipe.autor %></td>
-    <td><%= recipe.tag_list %></td>
-    <td><%= link_to 'Show', recipe %></td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= button_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Pokaż przepis', recipe %></td>
     
   </tr>
 <% end %>

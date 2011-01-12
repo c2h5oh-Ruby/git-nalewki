@@ -4,7 +4,7 @@ body{padding:0px; margin:0px; background:url(../images/main-bg.jpg) 0 0 repeat-x
 /*----TOP PANEL----*/
 #topPan{width:778px; height:317px; background:url(images/header.jpg) 0 0 no-repeat #fff; color:#726503; position:relative;}
 #topPan img.logo{width:260px; height:56px; position:absolute; top:54px; left:34px;}
-#topPan ul{width:107px; height:126px; font-weight:bold; position:absolute; top:161px; left:136px; font-size:13px; line-height:24px;}
+#topPan ul{width:257px; height:126px; font-weight:bold; position:absolute; top:161px; left:136px; font-size:13px; line-height:24px;}
 #topPan ul li{width:107px; height:24px; border-bottom:1px dashed #AECA8D;}
 #topPan ul li a{width:82px; height:24px; display:block; background:url(images/arrow-normal.gif) 0 8px no-repeat #fff; color:#5E8402; line-height:24px; text-decoration:none; padding:0 0 0 25px;}
 #topPan ul li a:hover{background:url(images/arrow-hover.gif) 0 8px no-repeat #ECFFD5; color:#5E8402; text-decoration:none;}

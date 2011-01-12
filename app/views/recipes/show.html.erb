@@ -2,9 +2,9 @@
 <div id="topPan">
 	<img src="../images/logo.gif" title="Liqidity Graph" alt="Liqidity Graph" width="260" height="56" border="0" class="logo" />
 	<ul>
+		<li><%= link_to_rpx "Zaloguj sie", user_session_url %> </li>
 		<li><%= link_to "Katalog", recipes_path %></li>
 		<li><%= link_to 'Dodaj', new_recipe_path %></li>
-		<li><%= link_to_rpx "Zaloguj sie", user_session_url %> </li>
 	</ul>
 </div>
 <p id="notice"><%= notice %></p>
@@ -37,19 +37,25 @@
 <p>
   <b>Autor:</b>
   <%= @recipe.autor %>
+  <span style="float:right; padding-right:20px;"><%= link_to 'Usuń przepis', @recipe, :confirm => 'Are you sure?', :method => :delete %></span>
+  <span style="float:right; padding-right:20px;"><%= link_to 'Popraw przepis', edit_recipe_path(@recipe) %></span>
 </p>
 <p>
 <% if @recipe.comments.any? %>
-  <h2>Komentarze</h2>
+  <b>Opinie:</b>
   <%= render @recipe.comments %>
 <% end %>
 </p>
 <p>
-<h2>Dodaj komentarz</h2>
+<b>Twoje zdanie o nalewce:</b>
 <%= render 'comments/form' %>
 </p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
 </div>
+</div>
+	  <div id="footermainPan">
+  <div id="footerPan">
+		<p class="copyright">©c2h5oh. All Rights Reserved.</p>
+	
+  </div>
 </div>
