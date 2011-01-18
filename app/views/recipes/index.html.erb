@@ -43,6 +43,11 @@ $(function(){
   <% end %>
 </p>
 </div>
+<div>
+<p style="width:100%; margin:0 auto; text-align:center;"><center><%= will_paginate @recipes, {
+        :prev_label => 'Poprzednie',
+        :next_label => 'Następne'
+        }%></p>
 </div>
 	  <div id="footermainPan">
   <div id="footerPan">

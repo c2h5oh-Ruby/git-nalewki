@@ -8,8 +8,9 @@ before_filter :only => [:index, :tags] do
   @tags = Recipe.tag_counts  # for tag clouds
 end
   def index
-    @recipes = Recipe.search(params[:search]).order("created_at desc")
+    @recipes = Recipe.search(params[:search], params[:page])
    #@tags = Recipe.tag_counts
+   #respond_with @recipes
    respond_with @recipes
   end
 def tags
