@@ -17,6 +17,7 @@ gem 'devise_rpx_connectable'
 
 gem 'ajaxful_rating', '3.0.0.beta3'
 
+ gem 'will_paginate', '~> 3.0.beta'
 # Deploy with Capistrano
 # gem 'capistrano'
 
