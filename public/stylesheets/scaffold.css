@@ -1,13 +1,16 @@
 body{padding:0px; margin:0px; background:url(../images/main-bg.jpg) 0 0 repeat-x #d4f89e; color:#6B6854; font:14px/18px "Trebuchet MS",Arial, Helvetica, sans-serif;}
 
+body a,a:hover
+{
+text-decoration:none;
+}
+
 #container{width:778px; margin:0 auto;}
 /*----TOP PANEL----*/
 #topPan{width:778px; height:317px; background:url(images/header.jpg) 0 0 no-repeat #fff; color:#726503; position:relative;}
 #topPan img.logo{width:260px; height:56px; position:absolute; top:54px; left:34px;}
 #topPan ul{width:257px; height:126px; font-weight:bold; position:absolute; top:161px; left:136px; font-size:13px; line-height:24px;}
 #topPan ul li{width:107px; height:24px; border-bottom:1px dashed #AECA8D;}
-#topPan ul li a{width:82px; height:24px; display:block; background:url(images/arrow-normal.gif) 0 8px no-repeat #fff; color:#5E8402; line-height:24px; text-decoration:none; padding:0 0 0 25px;}
-#topPan ul li a:hover{background:url(images/arrow-hover.gif) 0 8px no-repeat #ECFFD5; color:#5E8402; text-decoration:none;}
 #topPan ul li.home{width:82px; height:24px; display:block; background:url(images/arrow-hover.gif) 0 8px no-repeat #ECFFD5; color:#5E8402; line-height:24px; text-decoration:none; padding:0 0 0 25px;}
 #topPan ul li.contact{width:107px; height:24px; border-bottom:none;}
 
@@ -27,7 +30,7 @@ height:100px;
 background:#f1fddd;
 }
 
-image
+.image
 {
 width: 100px;
 height:90px;
@@ -35,6 +38,14 @@ float:left;
 margin:5px 5px;
 background: #000000;
 }
+
+.image img
+{
+width: 101px;
+height:90px;
+border-style:none;
+}
+
 
 .opis
 {
@@ -51,7 +62,7 @@ height:20px;
 margin:10px 0px;
 text-align:center;
 }
-#bodyPan h1 a,a:hover
+#bodyPan h1 a
 {
 font-size:18px;
 text-shadow: 1px 1px 1px;
@@ -83,13 +94,14 @@ text-align:center;
 #footerPan ul.templateworld li a:hover{text-decoration:underline;}
 
 #footerPanhtml{width:64px; height:19px; display:block; position:absolute; background:#5E8402; color:#fff; border:1px solid #fff; top:45px; left:260px;}
-#footerPanhtml a{width:58px; height:17px; display:block; background:url(images/footer-arrow.gif) 100% 0  no-repeat #5E8402; border:1px solid #fff; color:#fff; font-size:11px; line-height:17px; font-weight:bold; text-decoration:none;text-transform:uppercase; padding:0 0 0 4px;}
-#footerPanhtml a:hover{background:url(images/footer-arrow-hover.gif) 100% 0  no-repeat #A7C204; color:#fff;}
 
 #footerPancss{width:64px; height:19px; display:block; position:absolute; top:45px; left:330px; border:1px solid #fff;}
-#footerPancss a{width:56px; height:17px; display:block; background:url(images/footer-arrow-hover.gif) 100% 0  no-repeat #A7C204;  border:1px solid #fff; color:#fff; font-size:11px; line-height:17px; font-weight:bold; text-decoration:none; text-transform:uppercase; padding:0 0 0 8px;}
-#footerPancss a:hover{background:url(images/footer-arrow.gif) 100% 0  no-repeat #5E8402; color:#fff; text-decoration:none;}
 
 table {width:100%; margin:0px auto;}
 td { text-align:center;}
 tr {height:150px; background:#000000;}
+
+.css1 { font-size:10px; color: #000000; }
+.css2 { font-size:10px; color: #000000; }
+.css3 { font-size:10px; color: #000000; }
+.css4 { font-size:10px; color: #000000; }

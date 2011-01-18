@@ -37,11 +37,15 @@ $(function(){
 </div>
 </div>
 <% end %>
+<p style="width:100%; margin:0 auto; text-align:center;">
+  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+  <%= link_to tag.name, tags_recipes_path(:name=>tag.name), :class => css_class %>
+  <% end %>
+</p>
 </div>
 </div>
 	  <div id="footermainPan">
   <div id="footerPan">
-		<p class="copyright">©c2h5oh. All Rights Reserved.</p>
-	
+  <p class="copyright">©c2h5oh. All Rights Reserved.</p>
   </div>
 </div>
