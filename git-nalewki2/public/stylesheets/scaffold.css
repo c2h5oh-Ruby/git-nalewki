@@ -1,0 +1,107 @@
+body{padding:0px; margin:0px; background:url(../images/main-bg.jpg) 0 0 repeat-x #d4f89e; color:#6B6854; font:14px/18px "Trebuchet MS",Arial, Helvetica, sans-serif;}
+
+body a,a:hover
+{
+text-decoration:none;
+}
+
+#container{width:778px; margin:0 auto;}
+/*----TOP PANEL----*/
+#topPan{width:778px; height:317px; background:url(images/header.jpg) 0 0 no-repeat #fff; color:#726503; position:relative;}
+#topPan img.logo{width:260px; height:56px; position:absolute; top:54px; left:34px;}
+#topPan ul{width:257px; height:126px; font-weight:bold; position:absolute; top:161px; left:136px; font-size:13px; line-height:24px;}
+#topPan ul li{width:107px; height:24px; border-bottom:1px dashed #AECA8D;}
+#topPan ul li.home{width:82px; height:24px; display:block; background:url(images/arrow-hover.gif) 0 8px no-repeat #ECFFD5; color:#5E8402; line-height:24px; text-decoration:none; padding:0 0 0 25px;}
+#topPan ul li.contact{width:107px; height:24px; border-bottom:none;}
+
+/*----/TOP PANEL----*/
+/*----BODY PANEL----*/
+#bodyPan{width:778px; position:relative;  margin:0 auto;}
+#bodytopPan{width:750px;  position:relative; margin:0 auto; padding: 17px 0 0 0; height:`200px;}
+#bodytopPan p { color:#000000; text-align:center; }
+#bodytopPan h2{width:500px; height:70px; background:url(images/icon1.gif) 0 0 no-repeat ; color:#81C227; font:20px/70px "Trebuchet MS",Arial, Helvetica, sans-serif; padding:0 0 0 98px; }
+
+
+.recipe
+{
+margin:10px auto;
+width:750px;
+height:100px;
+background:#f1fddd;
+}
+
+.image
+{
+width: 100px;
+height:90px;
+float:left;
+margin:5px 5px;
+background: #000000;
+}
+
+.image img
+{
+width: 101px;
+height:90px;
+border-style:none;
+}
+
+
+.opis
+{
+width:620px;
+height:90px;
+float:left;
+margin:5px 10px;
+}
+
+
+.opis h1
+{
+height:20px;
+margin:10px 0px;
+text-align:center;
+}
+#bodyPan h1 a
+{
+font-size:18px;
+text-shadow: 1px 1px 1px;
+color: #265ca4;
+text-decoration:none;
+text-align:center;
+}
+
+
+#bodymiddleMainPan h2{height:55px; width:280px; background:url(images/icon2.gif) 0 1px no-repeat; text-transform:uppercase; font-size:20px; line-height:57px;  margin:0 auto;}
+
+/*----BODY PANEL----*/
+
+/*----FOOTER PANEL----*/
+#footermainPan{height:135px; background:url(images/footerbg.jpg) 0 0 repeat-x #9CC149; color:#fff; position:relative; margin:0 auto; clear:both; padding:75px 0 0;}
+
+#footerPan{width:700px; margin:0 auto;}
+
+#footerPan ul{width:375px; height:20px; padding:0; margin:0 auto;  list-style:none;}
+#footerPan li{float:left; }
+#footerPan ul li a{padding:0 10px 0; color:#fff; background:#7DA93E; text-decoration:none; font-size:12px;}
+#footerPan ul li a:hover{text-decoration:underline;}
+
+#footerPan p.copyright{width:204px; position:relative; margin:0 auto; background:#7FAA3E; color:#fff;  font-size:11px;}
+
+#footerPan ul.templateworld{width:250px; background:#85AE41; color:#fff; display:block; position:absolute; top:70px; left:260px; font-size:10px;}
+#footerPan ul.templateworld li{height:20px;}
+#footerPan ul.templateworld li a{background:#85AE41; display:block; color:#fff; text-decoration:none;}
+#footerPan ul.templateworld li a:hover{text-decoration:underline;}
+
+#footerPanhtml{width:64px; height:19px; display:block; position:absolute; background:#5E8402; color:#fff; border:1px solid #fff; top:45px; left:260px;}
+
+#footerPancss{width:64px; height:19px; display:block; position:absolute; top:45px; left:330px; border:1px solid #fff;}
+
+table {width:100%; margin:0px auto;}
+td { text-align:center;}
+tr {height:150px; background:#000000;}
+
+.css1 { font-size:10px; color: #000000; }
+.css2 { font-size:10px; color: #000000; }
+.css3 { font-size:10px; color: #000000; }
+.css4 { font-size:10px; color: #000000; }

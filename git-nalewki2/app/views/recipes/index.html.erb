@@ -1,0 +1,56 @@
+<style type="text/css">
+#tag-cloud { position:relative; width:400px; margin:30px auto; height:100px;}
+</style>
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.tagcloud.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#tag-cloud").tagCloud({"direction":"vertical", "easein":"easeOutBack", "speed":2000});
+});
+</script>
+
+
+<div id="bodyPan">
+	<div id="bodytopPan">
+		<p>Serwis realizowany w ramach projektu z Architektury Serwisów Internetowych</p>
+		<p>Git-nalewki umożliwia dzielenie się przepisami na wyszukane i wykwintne trunki zwane nalewkami, komentowanie i ocenianie przepisów innych użytkowników</p>
+<p>Naszą aplikacja przeznaczona jest dla miłośników oraz degustatorów, którzy lubią mieć w swoim barku coś czego nie można dostać w sklepie i czym będą mogli poczęstować gości w czasie spotkań rodzinnych i towarzyskich</p>
+	</div>
+	<% @recipes.each do |recipe| %>
+		<div class="recipe">
+<div class="image"><%= image_tag recipe.photo.url() %></div>
+<div class="opis">
+<h1><%= link_to recipe.nazwa, recipe %></h1>
+<div style="float:right;  width:125px; height:30px;"><%= ratings_for recipe, :static %>(Głosów: <%= recipe.rates.count %>)</div>
+<div style="float:right;  width:125px;  width:400px; height:45px; margin-right:50px;">
+<p style="height:22px; width:100%;  padding:0px; margin:0px;">
+<span style="padding:2px 2px 0px 5px; float:left;" >Autor: <b><%= recipe.autor %></b></span>
+<span style="padding:2px 2px 0px 5px; float:right;" >Poziom trudności: <b><%= recipe.trudnosc %></b></span>
+</p>
+<p style="height:22px; width:100%;  padding:0px; margin:0px;">
+<span style="padding:2px 2px 0px 5px; float:left;" >Liczba komentarzy: <b><%= recipe.comments.count %></b></span>
+<span style="padding:2px 2px 0px 5px; float:right;" >Szacunkowy koszt: <b><%= recipe.cena %></b></span>
+</p>
+</div>
+
+</div>
+</div>
+<% end %>
+<p style="width:100%; margin:0 auto; text-align:center;">
+  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+  <%= link_to tag.name, tags_recipes_path(:name=>tag.name), :class => css_class %>
+  <% end %>
+</p>
+</div>
+<div>
+<p style="width:100%; margin:0 auto; text-align:center;"><center><%= will_paginate @recipes, {
+        :prev_label => 'Poprzednie',
+        :next_label => 'Następne'
+        }%></p>
+</div>
+	  <div id="footermainPan">
+  <div id="footerPan">
+  <p class="copyright">©c2h5oh. All Rights Reserved.</p>
+  </div>
+</div>
