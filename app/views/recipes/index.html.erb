@@ -37,17 +37,18 @@ $(function(){
 </div>
 </div>
 <% end %>
-<p style="width:100%; margin:0 auto; text-align:center;">
+<div id="tagi">
+<p>
+  <span style="color:#FF0000;">Tagi: </span>
   <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
   <%= link_to tag.name, tags_recipes_path(:name=>tag.name), :class => css_class %>
   <% end %>
 </p>
 </div>
-<div>
-<p style="width:100%; margin:0 auto; text-align:center;"><center><%= will_paginate @recipes, {
-        :prev_label => 'Poprzednie',
-        :next_label => 'Następne'
-        }%></p>
+	<div class='flickr_pagination'>
+   <%= will_paginate @posts, :container => false %>
+</div>
+</div>
 </div>
 	  <div id="footermainPan">
   <div id="footerPan">

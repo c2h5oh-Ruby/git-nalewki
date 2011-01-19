@@ -1,24 +1,28 @@
 
 <p id="notice"><%= notice %></p>
-<div id="bodymiddleMainPan">
-		<h2>  <%= @recipe.nazwa %></h2>
-
-<p>
-<%= image_tag @recipe.photo.url(:small) %>
+<div id="bodyPan">
+<h2 style="font-size:25px;
+text-shadow: 1px 1px 1px;
+color: #265ca4;
+text-decoration:none;
+text-align:center;"><%= @recipe.nazwa %></h2>
+<div style="recipe2">
+<div class="image"><%= image_tag @recipe.photo.url() %></div>
+<div class="opis2">
+<div style="float:right;  width:125px; height:30px;">Twoja ocena: <%= ratings_for @recipe, :dimension => :nazwa %></div>
+<div style="float:right;  width:125px;  width:400px; height:45px; margin-right:50px;">
+<p style="height:22px; width:100%;  padding:0px; margin:0px;">
+<span style="padding:2px 2px 0px 5px; float:left;" >Autor: <b><%= @recipe.autor %></b></span>
+<span style="padding:2px 2px 0px 5px; float:right;" >Poziom trudności: <b><%= @recipe.trudnosc %></b></span>
 </p>
-
-Twoja ocena: <%= ratings_for @recipe, :dimension => :nazwa %>
-
-<p>
-  <b>Cena:</b>
-  <%= @recipe.cena %>
+<p style="height:22px; width:100%;  padding:0px; margin:0px;">
+<span style="padding:2px 2px 0px 5px; float:left;" >Liczba komentarzy: <b><%= @recipe.comments.count %></b></span>
+<span style="padding:2px 2px 0px 5px; float:right;" >Szacunkowy koszt: <b><%= @recipe.cena %></b></span>
 </p>
+</div>
 
-<p>
-  <b>Trudnosc:</b>
-  <%= @recipe.trudnosc %>
-</p>
-
+</div>
+</div>
 <p>
   <b>Skladniki:</b>
   <%= @recipe.skladniki %>
